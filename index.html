@@ -68,53 +68,72 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
   <div data-cursor-glow style="position:absolute;top:0;left:0;width:640px;height:640px;margin:-320px 0 0 -320px;border-radius:50%;background:radial-gradient(circle,var(--ae-glowA,rgba(139,124,246,.30)),transparent 60%);filter:blur(30px);opacity:.5;transition:opacity .5s ease;will-change:transform"></div>
 </div>
 
-<nav data-nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:14px;padding:14px 34px;backdrop-filter:blur(18px);background:transparent;border-bottom:1px solid transparent;transition:background-color .4s ease,border-color .4s ease,padding .4s ease">
+<nav data-nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:12px;padding:12px clamp(14px,4vw,34px);backdrop-filter:blur(18px);background:transparent;border-bottom:1px solid transparent;transition:background-color .4s ease,border-color .4s ease,padding .4s ease">
   <a href="#top" style="display:flex;align-items:center;gap:9px;color:var(--ae-t1,rgba(255,255,255,.94))">
     <svg data-logo width="20" height="20" style="color:var(--ae-acc,#8b7cf6);transition:transform .4s cubic-bezier(.2,.8,.2,1)"><use href="#a-mark"></use></svg>
     <span style="font:600 15px/1 Geist,sans-serif;letter-spacing:-.01em">Aether</span>
   </a>
-  <span style="padding:3px 8px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.10));font:500 9.5px/1.4 'Geist Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))">Early access</span>
+  <span data-navbadge data-i18n="nav.badge" style="padding:3px 8px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.10));font:500 9.5px/1.4 'Geist Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))">Early access</span>
   <div style="flex:1"></div>
   <div data-navlinks style="display:flex;gap:22px;align-items:center">
-    <a href="#tour" style="font:500 13px/1 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">The app</a>
-    <a href="#studio" style="font:500 13px/1 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">Skin Studio</a>
-    <a href="#format" style="font:500 13px/1 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">Format</a>
-    <a href="#roadmap" style="font:500 13px/1 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">Roadmap</a>
-    <a href="https://github.com/FedericoBaratti/Aether" target="_blank" rel="noopener" data-magnet style="display:flex;align-items:center;gap:7px;height:34px;padding:0 15px;border-radius:99px;background:var(--ae-acc,#8b7cf6);color:var(--ae-ink,#09090d);font:600 12.5px/1 Geist,sans-serif;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .7s ease">
-      <svg width="14" height="14"><use href="#a-star"></use></svg>Star on GitHub
-    </a>
+    <a href="#tour" data-i18n="nav.app" style="font:500 13px/1 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">The app</a>
+    <a href="#studio" data-i18n="nav.studio" style="font:500 13px/1 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">Skin Studio</a>
+    <a href="#format" data-i18n="nav.format" style="font:500 13px/1 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">Format</a>
+    <a href="#roadmap" data-i18n="nav.roadmap" style="font:500 13px/1 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">Roadmap</a>
   </div>
+  <div data-langsel style="display:flex;gap:2px;padding:3px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.10));background:var(--ae-surf,#0e0e14);transition:background-color .7s ease,border-color .7s ease">
+    <button type="button" data-lang="en" style="height:26px;padding:0 9px;border-radius:99px;font:600 10.5px/1 Geist,sans-serif;border:0;background:transparent;color:var(--ae-t2,rgba(255,255,255,.62));cursor:pointer;letter-spacing:.06em;transition:background-color .3s ease,color .3s ease">EN</button><button type="button" data-lang="it" style="height:26px;padding:0 9px;border-radius:99px;font:600 10.5px/1 Geist,sans-serif;border:0;background:transparent;color:var(--ae-t2,rgba(255,255,255,.62));cursor:pointer;letter-spacing:.06em;transition:background-color .3s ease,color .3s ease">IT</button><button type="button" data-lang="fr" style="height:26px;padding:0 9px;border-radius:99px;font:600 10.5px/1 Geist,sans-serif;border:0;background:transparent;color:var(--ae-t2,rgba(255,255,255,.62));cursor:pointer;letter-spacing:.06em;transition:background-color .3s ease,color .3s ease">FR</button><button type="button" data-lang="de" style="height:26px;padding:0 9px;border-radius:99px;font:600 10.5px/1 Geist,sans-serif;border:0;background:transparent;color:var(--ae-t2,rgba(255,255,255,.62));cursor:pointer;letter-spacing:.06em;transition:background-color .3s ease,color .3s ease">DE</button>
+  </div>
+  <a href="https://github.com/FedericoBaratti/Aether" target="_blank" rel="noopener" data-navcta data-magnet style="display:flex;align-items:center;gap:7px;height:34px;padding:0 15px;border-radius:99px;background:var(--ae-acc,#8b7cf6);color:var(--ae-ink,#09090d);font:600 12.5px/1 Geist,sans-serif;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .7s ease">
+    <svg width="14" height="14"><use href="#a-star"></use></svg><span data-i18n="nav.star">Star on GitHub</span>
+  </a>
+  <button type="button" data-burger aria-label="Menu" style="display:none;width:44px;height:44px;margin-right:-10px;align-items:center;justify-content:center;border:0;background:transparent;color:var(--ae-t1,rgba(255,255,255,.94));cursor:pointer;-webkit-tap-highlight-color:transparent">
+    <span style="position:relative;display:block;width:20px;height:14px"><span data-bar style="position:absolute;left:0;top:0px;width:100%;height:1.8px;border-radius:2px;background:currentColor;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .2s ease"></span><span data-bar style="position:absolute;left:0;top:6.1px;width:100%;height:1.8px;border-radius:2px;background:currentColor;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .2s ease"></span><span data-bar style="position:absolute;left:0;top:12.2px;width:100%;height:1.8px;border-radius:2px;background:currentColor;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .2s ease"></span></span>
+  </button>
 </nav>
+
+<div data-mobmenu style="position:fixed;inset:0;z-index:48;display:none;flex-direction:column;justify-content:center;gap:2px;padding:92px 26px 40px;background:var(--ae-bg,#09090d);opacity:0;transition:opacity .35s ease">
+  <a href="#tour" data-i18n="nav.app" style="display:flex;align-items:center;min-height:54px;font:600 28px/1.1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em;color:var(--ae-t1,rgba(255,255,255,.94))">The app</a>
+  <a href="#studio" data-i18n="nav.studio" style="display:flex;align-items:center;min-height:54px;font:600 28px/1.1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em;color:var(--ae-t1,rgba(255,255,255,.94))">Skin Studio</a>
+  <a href="#format" data-i18n="nav.format" style="display:flex;align-items:center;min-height:54px;font:600 28px/1.1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em;color:var(--ae-t1,rgba(255,255,255,.94))">Format</a>
+  <a href="#roadmap" data-i18n="nav.roadmap" style="display:flex;align-items:center;min-height:54px;font:600 28px/1.1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em;color:var(--ae-t1,rgba(255,255,255,.94))">Roadmap</a>
+  <div style="height:1px;margin:24px 0 18px;background:var(--ae-line,rgba(255,255,255,.10))"></div>
+  <div data-langsel style="display:flex;gap:8px">
+    <button type="button" data-lang="en" style="flex:1;min-height:46px;border-radius:12px;font:600 14px/1 Geist,sans-serif;border:0;background:transparent;color:var(--ae-t2,rgba(255,255,255,.62));cursor:pointer;letter-spacing:.06em;transition:background-color .3s ease,color .3s ease">EN</button><button type="button" data-lang="it" style="flex:1;min-height:46px;border-radius:12px;font:600 14px/1 Geist,sans-serif;border:0;background:transparent;color:var(--ae-t2,rgba(255,255,255,.62));cursor:pointer;letter-spacing:.06em;transition:background-color .3s ease,color .3s ease">IT</button><button type="button" data-lang="fr" style="flex:1;min-height:46px;border-radius:12px;font:600 14px/1 Geist,sans-serif;border:0;background:transparent;color:var(--ae-t2,rgba(255,255,255,.62));cursor:pointer;letter-spacing:.06em;transition:background-color .3s ease,color .3s ease">FR</button><button type="button" data-lang="de" style="flex:1;min-height:46px;border-radius:12px;font:600 14px/1 Geist,sans-serif;border:0;background:transparent;color:var(--ae-t2,rgba(255,255,255,.62));cursor:pointer;letter-spacing:.06em;transition:background-color .3s ease,color .3s ease">DE</button>
+  </div>
+  <a href="#access" style="margin-top:18px;display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;border-radius:99px;background:var(--ae-acc,#8b7cf6);color:var(--ae-ink,#09090d);font:600 15px/1 Geist,sans-serif"><span data-i18n="hero.cta1">Request early access</span></a>
+  <a href="https://github.com/FedericoBaratti/Aether" target="_blank" rel="noopener" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.14));color:var(--ae-t1,rgba(255,255,255,.94));font:550 15px/1 Geist,sans-serif"><svg width="16" height="16" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-star"></use></svg><span data-i18n="nav.star">Star on GitHub</span></a>
+</div>
 
 <section id="top" style="position:relative;z-index:1;padding:clamp(104px,17vw,150px) clamp(16px,4vw,34px) 0;display:flex;flex-direction:column;align-items:center;text-align:center">
   <div data-rv style="display:flex;align-items:center;gap:9px;padding:6px 8px 6px 14px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.10));background:var(--ae-surf,#0e0e14);transition:background-color .7s ease,border-color .7s ease">
     <span style="width:6px;height:6px;border-radius:50%;background:var(--ae-acc,#8b7cf6);animation:ae-blink 2.4s ease-in-out infinite"></span>
-    <span style="font:500 12px/1 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">A local music player with a skin engine</span>
+    <span data-i18n="hero.badge" style="font:500 12px/1 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">A local music player with a skin engine</span>
     <span style="padding:3px 9px;border-radius:99px;background:var(--ae-raise,#1e1e2a);font:500 10.5px/1.3 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46));transition:background-color .7s ease">Rust · Tauri</span>
   </div>
 
-  <h1 style="margin:26px 0 0;max-width:16ch;font:600 clamp(50px,7.4vw,108px)/0.94 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.035em;text-wrap:balance">
-    <span data-split data-d="80" style="display:block">Your library.</span>
-    <span data-split data-d="220" style="display:block">Your machine.</span>
-    <span data-split data-d="360" style="display:block;color:var(--ae-acc,#8b7cf6);transition:color .7s ease">Your look.</span>
+  <h1 style="margin:26px 0 0;max-width:16ch;font:600 clamp(38px,8.8vw,108px)/0.94 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.035em;text-wrap:balance">
+    <span data-split data-i18n="hero.l1" data-d="80" style="display:block">Your library.</span>
+    <span data-split data-i18n="hero.l2" data-d="220" style="display:block">Your machine.</span>
+    <span data-split data-i18n="hero.l3" data-d="360" style="display:block;color:var(--ae-acc,#8b7cf6);transition:color .7s ease">Your look.</span>
   </h1>
 
-  <p data-rv data-d="340" style="margin:26px 0 0;max-width:52ch;font:300 18.5px/1.6 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));text-wrap:pretty">
+  <p data-rv data-i18n="hero.lede" data-d="340" style="margin:26px 0 0;max-width:52ch;font:300 clamp(15.5px,4.1vw,18.5px)/1.6 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));text-wrap:pretty">
     Aether plays the files you already own — no account, no stream, no telemetry. And every surface it draws is a token you can redefine, in a skin file that the app validates before it renders a single pixel.
   </p>
 
   <div data-rv data-d="430" style="margin:34px 0 0;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center">
     <a href="#access" data-magnet style="display:flex;align-items:center;gap:9px;height:46px;padding:0 22px;border-radius:99px;background:var(--ae-acc,#8b7cf6);color:var(--ae-ink,#09090d);font:600 14.5px/1 Geist,sans-serif;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .7s ease">
-      Request early access<svg width="16" height="16"><use href="#a-chev-r"></use></svg>
+      <span data-i18n="hero.cta1">Request early access</span><svg width="16" height="16"><use href="#a-chev-r"></use></svg>
     </a>
     <a href="https://github.com/FedericoBaratti/Aether" target="_blank" rel="noopener" data-magnet style="display:flex;align-items:center;gap:9px;height:46px;padding:0 20px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.14));background:var(--ae-surf,#0e0e14);color:var(--ae-t1,rgba(255,255,255,.94));font:550 14.5px/1 Geist,sans-serif;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .7s ease,border-color .7s ease">
-      <svg width="16" height="16" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-star"></use></svg>Star on GitHub
+      <svg width="16" height="16" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-star"></use></svg><span data-i18n="nav.star">Star on GitHub</span>
       <span style="font:500 11.5px/1 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">FedericoBaratti/Aether</span>
     </a>
   </div>
 
   <div data-rv data-d="520" style="margin:18px 0 0;display:flex;gap:18px;flex-wrap:wrap;justify-content:center;font:500 11.5px/1 'Geist Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))">
-    <span>macOS · Windows · Linux</span><span>FLAC ALAC WAV MP3 OGG</span><span>Offline by design</span>
+    <span>macOS · Windows · Linux</span><span>FLAC ALAC WAV MP3 OGG</span><span data-i18n="hero.m3">Offline by design</span>
   </div>
 
   <div data-hero-stage style="position:relative;width:min(1240px,96vw);margin:clamp(40px,7vw,66px) auto 0;perspective:1800px">
@@ -131,34 +150,34 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
               <svg width="14" height="14" style="color:var(--ae-t3,rgba(255,255,255,.46))"><use href="#a-search"></use></svg>
             </div>
             <div style="display:flex;flex-direction:column;gap:2px">
-              <div style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="14" height="14"><use href="#a-album"></use></svg><span style="flex:1;font-size:12.5px">Albums</span><span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">412</span></div>
-              <div style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;background:var(--ae-accSoft,rgba(139,124,246,.16));color:var(--ae-acc,#8b7cf6);transition:background-color .7s ease,color .7s ease"><svg width="14" height="14"><use href="#a-track"></use></svg><span style="flex:1;font-size:12.5px;font-weight:600">Tracks</span><span style="font:10.5px 'Geist Mono',monospace">5 108</span></div>
-              <div style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="14" height="14"><use href="#a-artist"></use></svg><span style="flex:1;font-size:12.5px">Artists</span><span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">287</span></div>
-              <div style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="14" height="14"><use href="#a-heart"></use></svg><span style="flex:1;font-size:12.5px">Favourites</span></div>
-              <div style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="14" height="14"><use href="#a-settings"></use></svg><span style="flex:1;font-size:12.5px">Settings</span></div>
+              <div style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="14" height="14"><use href="#a-album"></use></svg><span data-i18n="ui.albums" style="flex:1;font-size:12.5px">Albums</span><span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">412</span></div>
+              <div style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;background:var(--ae-accSoft,rgba(139,124,246,.16));color:var(--ae-acc,#8b7cf6);transition:background-color .7s ease,color .7s ease"><svg width="14" height="14"><use href="#a-track"></use></svg><span data-i18n="ui.tracks" style="flex:1;font-size:12.5px;font-weight:600">Tracks</span><span style="font:10.5px 'Geist Mono',monospace">5 108</span></div>
+              <div style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="14" height="14"><use href="#a-artist"></use></svg><span data-i18n="ui.artists" style="flex:1;font-size:12.5px">Artists</span><span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">287</span></div>
+              <div style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="14" height="14"><use href="#a-heart"></use></svg><span data-i18n="ui.fav" style="flex:1;font-size:12.5px">Favourites</span></div>
+              <div style="display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="14" height="14"><use href="#a-settings"></use></svg><span data-i18n="ui.settings" style="flex:1;font-size:12.5px">Settings</span></div>
             </div>
-            <div style="font:600 9px/1 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46));padding:0 8px">Playlists</div>
+            <div style="font:600 9px/1 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46));padding:0 8px" data-i18n="ui.playlists">Playlists</div>
             <div style="display:flex;flex-direction:column;gap:1px">
-              <div style="display:flex;align-items:center;gap:8px;padding:5px 10px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-list"></use></svg><span style="font-size:11.5px">Late shift</span></div>
-              <div style="display:flex;align-items:center;gap:8px;padding:5px 10px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-list"></use></svg><span style="font-size:11.5px">Vinyl rips 2019</span></div>
-              <div style="display:flex;align-items:center;gap:8px;padding:5px 10px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-list"></use></svg><span style="font-size:11.5px">Kitchen, loud</span></div>
-              <div style="display:flex;align-items:center;gap:8px;padding:5px 10px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-list"></use></svg><span style="font-size:11.5px">Ambient, long</span></div>
+              <div style="display:flex;align-items:center;gap:8px;padding:5px 10px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-list"></use></svg><span data-i18n="ui.pl1" style="font-size:11.5px">Late shift</span></div>
+              <div style="display:flex;align-items:center;gap:8px;padding:5px 10px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-list"></use></svg><span data-i18n="ui.pl2" style="font-size:11.5px">Vinyl rips 2019</span></div>
+              <div style="display:flex;align-items:center;gap:8px;padding:5px 10px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-list"></use></svg><span data-i18n="ui.pl3" style="font-size:11.5px">Kitchen, loud</span></div>
+              <div style="display:flex;align-items:center;gap:8px;padding:5px 10px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-list"></use></svg><span data-i18n="ui.pl4" style="font-size:11.5px">Ambient, long</span></div>
             </div>
             <div style="flex:1"></div>
             <div style="padding:9px 10px;border-radius:11px;border:1px solid var(--ae-line,rgba(255,255,255,.08));background:var(--ae-surf2,#16161f);transition:background-color .7s ease,border-color .7s ease">
-              <div style="display:flex;align-items:center;gap:7px;font:500 10.5px/1 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))"><svg width="12" height="12"><use href="#a-bolt"></use></svg>Scan complete</div>
-              <div style="margin-top:6px;font-size:11px;color:var(--ae-t2,rgba(255,255,255,.62))">5 108 tracks · 41 min ago</div>
+              <div style="display:flex;align-items:center;gap:7px;font:500 10.5px/1 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))"><svg width="12" height="12"><use href="#a-bolt"></use></svg><span data-i18n="ui.scan">Scan complete</span></div>
+              <div style="margin-top:6px;font-size:11px;color:var(--ae-t2,rgba(255,255,255,.62))" data-i18n="ui.scanmeta">5 108 tracks · 41 min ago</div>
             </div>
           </div>
 
           <div style="padding:20px 22px 0;overflow:hidden">
-            <div style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))">Library</div>
+            <div style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))" data-i18n="ui.library">Library</div>
             <div style="margin-top:8px;display:flex;align-items:baseline;gap:12px">
-              <div style="font:600 30px/1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">Tracks</div>
-              <span style="font:11.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">5 108 · 14 d 6 h</span>
+              <div data-i18n="ui.tracks" style="font:600 30px/1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">Tracks</div>
+              <span style="font:11.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))" data-i18n="ui.libmeta">5 108 · 14 d 6 h</span>
             </div>
             <div style="margin-top:16px;display:grid;grid-template-columns:24px 34px 1fr 150px 46px;gap:12px;padding:0 8px 8px;border-bottom:1px solid var(--ae-line,rgba(255,255,255,.08));font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))">
-              <span style="text-align:right">#</span><span></span><span>Title</span><span>Album</span><span style="text-align:right">Time</span>
+              <span style="text-align:right">#</span><span></span><span data-i18n="ui.colTitle">Title</span><span data-i18n="ui.colAlbum">Album</span><span data-i18n="ui.colTime" style="text-align:right">Time</span>
             </div>
             <div style="margin-top:6px;display:flex;flex-direction:column;gap:1px">
               <sc-for list="{{ rows }}" as="r" hint-placeholder-count="11">
@@ -194,7 +213,7 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
                 </sc-for>
               </div>
               <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--ae-line,rgba(255,255,255,.08))">
-                <div style="font:600 9px/1 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))">Up next</div>
+                <div style="font:600 9px/1 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))" data-i18n="ui.upnext">Up next</div>
                 <div style="margin-top:9px;display:flex;flex-direction:column;gap:8px">
                   <div style="display:flex;gap:9px;align-items:center"><div style="width:26px;height:26px;border-radius:5px;background:linear-gradient(145deg,#2a3a5e,#5b8ac9)"></div><div style="min-width:0"><div style="font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">All I Need</div><div style="font-size:10px;color:var(--ae-t3,rgba(255,255,255,.46))">Radiohead</div></div></div>
                   <div style="display:flex;gap:9px;align-items:center"><div style="width:26px;height:26px;border-radius:5px;background:linear-gradient(145deg,#3d2f4a,#8a6fb0)"></div><div style="min-width:0"><div style="font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Faust Arp</div><div style="font-size:10px;color:var(--ae-t3,rgba(255,255,255,.46))">Radiohead</div></div></div>
@@ -223,8 +242,8 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
 </section>
 
 <section style="position:relative;z-index:1;padding:clamp(70px,11vw,110px) clamp(16px,4vw,34px);max-width:1180px;margin:0 auto">
-  <div data-rv style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-acc,#8b7cf6)">01 — The idea</div>
-  <h2 data-rv data-d="80" style="margin:18px 0 0;max-width:22ch;font:600 clamp(34px,4.4vw,60px)/1.04 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">A player that answers to the person who owns the files.</h2>
+  <div data-rv style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-acc,#8b7cf6)" data-i18n="s1.eyebrow">01 — The idea</div>
+  <h2 data-rv data-d="80" style="margin:18px 0 0;max-width:22ch;font:600 clamp(34px,4.4vw,60px)/1.04 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em" data-i18n="s1.h2">A player that answers to the person who owns the files.</h2>
   <div style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px">
     <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="4">
       <div data-rv data-tilt style="padding:26px;border-radius:16px;border:1px solid var(--ae-line,rgba(255,255,255,.08));background:var(--ae-surf,#0e0e14);transition:background-color .7s ease,border-color .35s ease,transform .35s cubic-bezier(.2,.8,.2,1);will-change:transform">
@@ -240,11 +259,11 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
   <div data-tour-sticky style="position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:0 clamp(16px,4vw,34px)">
     <div style="max-width:1180px;margin:0 auto;width:100%">
       <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
-        <div style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-acc,#8b7cf6)">02 — The app</div>
+        <div style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-acc,#8b7cf6)" data-i18n="s2.eyebrow">02 — The app</div>
         <div style="display:flex;gap:8px">
-          <span data-tab="0" style="padding:5px 12px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.10));font:550 11.5px/1.3 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));transition:all .4s ease">Library</span>
-          <span data-tab="1" style="padding:5px 12px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.10));font:550 11.5px/1.3 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));transition:all .4s ease">Now Playing</span>
-          <span data-tab="2" style="padding:5px 12px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.10));font:550 11.5px/1.3 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));transition:all .4s ease">Artists</span>
+          <span data-tab="0" data-i18n="ui.library" style="padding:6px 13px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.10));font:550 11.5px/1.3 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));transition:all .4s ease">Library</span>
+          <span data-tab="1" data-i18n="ui.nowplaying" style="padding:6px 13px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.10));font:550 11.5px/1.3 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));transition:all .4s ease">Now Playing</span>
+          <span data-tab="2" data-i18n="ui.artists" style="padding:6px 13px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.10));font:550 11.5px/1.3 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));transition:all .4s ease">Artists</span>
         </div>
       </div>
 
@@ -272,16 +291,16 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
             <div style="display:grid;grid-template-columns:180px 1fr;height:100%">
               <div style="background:var(--ae-surf,#0e0e14);border-right:1px solid var(--ae-line,rgba(255,255,255,.08));padding:12px 8px;display:flex;flex-direction:column;gap:10px;transition:background-color .7s ease">
                 <div style="display:flex;align-items:center;gap:7px;padding:0 6px"><svg width="14" height="14" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-mark"></use></svg><span style="font:600 12px/1 Geist,sans-serif">Aether</span></div>
-                <div style="display:flex;align-items:center;gap:7px;height:26px;padding:0 9px;border-radius:99px;background:var(--ae-surf2,#16161f);color:var(--ae-t3,rgba(255,255,255,.46));transition:background-color .7s ease"><svg width="12" height="12"><use href="#a-search"></use></svg><span style="font-size:11px">Search…</span><span style="margin-left:auto;font:9.5px 'Geist Mono',monospace">/</span></div>
+                <div style="display:flex;align-items:center;gap:7px;height:26px;padding:0 9px;border-radius:99px;background:var(--ae-surf2,#16161f);color:var(--ae-t3,rgba(255,255,255,.46));transition:background-color .7s ease"><svg width="12" height="12"><use href="#a-search"></use></svg><span data-i18n="ui.search" style="font-size:11px">Search…</span><span style="margin-left:auto;font:9.5px 'Geist Mono',monospace">/</span></div>
                 <div style="display:flex;flex-direction:column;gap:1px">
-                  <div style="display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:8px;background:var(--ae-accSoft,rgba(139,124,246,.16));color:var(--ae-acc,#8b7cf6);transition:background-color .7s ease,color .7s ease"><svg width="12" height="12"><use href="#a-album"></use></svg><span style="font-size:11.5px;font-weight:600">Albums</span></div>
-                  <div style="display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-track"></use></svg><span style="font-size:11.5px">Tracks</span></div>
-                  <div style="display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-artist"></use></svg><span style="font-size:11.5px">Artists</span></div>
-                  <div style="display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-heart"></use></svg><span style="font-size:11.5px">Favourites</span></div>
+                  <div style="display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:8px;background:var(--ae-accSoft,rgba(139,124,246,.16));color:var(--ae-acc,#8b7cf6);transition:background-color .7s ease,color .7s ease"><svg width="12" height="12"><use href="#a-album"></use></svg><span data-i18n="ui.albums" style="font-size:11.5px;font-weight:600">Albums</span></div>
+                  <div style="display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-track"></use></svg><span data-i18n="ui.tracks" style="font-size:11.5px">Tracks</span></div>
+                  <div style="display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-artist"></use></svg><span data-i18n="ui.artists" style="font-size:11.5px">Artists</span></div>
+                  <div style="display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:8px;color:var(--ae-t2,rgba(255,255,255,.62))"><svg width="12" height="12"><use href="#a-heart"></use></svg><span data-i18n="ui.fav" style="font-size:11.5px">Favourites</span></div>
                 </div>
               </div>
               <div style="padding:16px 18px;overflow:hidden">
-                <div style="display:flex;align-items:baseline;gap:10px"><div style="font:600 22px/1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">Albums</div><span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">412 · sorted by added</span></div>
+                <div style="display:flex;align-items:baseline;gap:10px"><div data-i18n="ui.albums" style="font:600 22px/1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">Albums</div><span data-i18n="ui.sortedadded" style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">412 · sorted by added</span></div>
                 <div style="margin-top:14px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
                   <sc-for list="{{ covers }}" as="c" hint-placeholder-count="10">
                     <div>
@@ -309,19 +328,19 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
                 </div>
               </div>
               <div>
-                <div style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))">Now playing</div>
+                <div style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))" data-i18n="ui.nowplaying">Now playing</div>
                 <div style="margin-top:10px;font:600 26px/1.1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">Weird Fishes / Arpeggi</div>
                 <div style="margin-top:6px;font-size:13px;color:var(--ae-t2,rgba(255,255,255,.62))">Radiohead · In Rainbows · 2007</div>
                 <div style="margin-top:16px;display:flex;gap:7px;flex-wrap:wrap">
                   <span style="padding:4px 10px;border-radius:99px;background:var(--ae-surf2,#16161f);font:10.5px 'Geist Mono',monospace;color:var(--ae-t2,rgba(255,255,255,.62));transition:background-color .7s ease">FLAC 24/96</span>
                   <span style="padding:4px 10px;border-radius:99px;background:var(--ae-surf2,#16161f);font:10.5px 'Geist Mono',monospace;color:var(--ae-t2,rgba(255,255,255,.62));transition:background-color .7s ease">2 341 kbps</span>
-                  <span style="padding:4px 10px;border-radius:99px;background:var(--ae-surf2,#16161f);font:10.5px 'Geist Mono',monospace;color:var(--ae-t2,rgba(255,255,255,.62));transition:background-color .7s ease">Gapless</span>
+                  <span style="padding:4px 10px;border-radius:99px;background:var(--ae-surf2,#16161f);font:10.5px 'Geist Mono',monospace;color:var(--ae-t2,rgba(255,255,255,.62));transition:background-color .7s ease" data-i18n="ui.gapless">Gapless</span>
                 </div>
                 <div style="margin-top:20px;height:4px;border-radius:99px;background:var(--ae-raise,#1e1e2a);overflow:hidden"><div style="height:100%;width:58%;border-radius:99px;background:var(--ae-acc,#8b7cf6);transition:background-color .7s ease"></div></div>
                 <div style="margin-top:7px;display:flex;justify-content:space-between;font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))"><span>3:12</span><span>5:18</span></div>
                 <div style="margin-top:22px;padding:13px 15px;border-radius:12px;border:1px dashed var(--ae-line,rgba(255,255,255,.14));display:flex;gap:11px;align-items:flex-start;transition:border-color .7s ease">
                   <svg width="15" height="15" style="flex:none;margin-top:2px;color:var(--ae-t3,rgba(255,255,255,.46))"><use href="#a-alert"></use></svg>
-                  <div><div style="font:550 12px/1.3 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))">Lyrics &amp; spectrum are off</div><div style="margin-top:3px;font-size:11px;color:var(--ae-t3,rgba(255,255,255,.46))">The audio core exposes neither yet. A command that doesn't exist is declared, not hidden.</div></div>
+                  <div><div style="font:550 12px/1.3 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62))" data-i18n="ui.lyricsoff">Lyrics &amp; spectrum are off</div><div data-i18n="ui.lyricsoffb" style="margin-top:3px;font-size:11px;color:var(--ae-t3,rgba(255,255,255,.46))">The audio core exposes neither yet. A command that doesn't exist is declared, not hidden.</div></div>
                 </div>
               </div>
             </div>
@@ -330,13 +349,13 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
           <div data-tscreen="2" style="position:absolute;left:50%;top:50%;width:1000px;height:620px;transform-origin:50% 50%;border-radius:14px;border:1px solid var(--ae-line,rgba(255,255,255,.10));overflow:hidden;background:var(--ae-bg,#09090d);box-shadow:0 50px 110px -34px rgba(0,0,0,.9);will-change:transform,opacity;transition:background-color .7s ease,border-color .7s ease">
             <div style="display:grid;grid-template-columns:1fr 280px;height:100%">
               <div style="padding:20px 22px;overflow:hidden">
-                <div style="display:flex;align-items:baseline;gap:10px"><div style="font:600 22px/1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">Artists</div><span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">287</span></div>
+                <div style="display:flex;align-items:baseline;gap:10px"><div data-i18n="ui.artists" style="font:600 22px/1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">Artists</div><span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">287</span></div>
                 <div style="margin-top:16px;display:flex;flex-direction:column;gap:2px">
                   <sc-for list="{{ artists }}" as="ar" hint-placeholder-count="8">
                     <div style="display:grid;grid-template-columns:38px 1fr 90px 60px;gap:12px;align-items:center;padding:7px 9px;border-radius:10px;background:{{ ar.bg }}">
                       <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(145deg,{{ ar.c1 }},{{ ar.c2 }})"></div>
                       <div style="font-size:13px;font-weight:{{ ar.fw }}">{{ ar.t }}</div>
-                      <div style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">{{ ar.al }} albums</div>
+                      <div style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">{{ ar.al }}</div>
                       <div style="text-align:right;font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">{{ ar.tr }}</div>
                     </div>
                   </sc-for>
@@ -345,14 +364,14 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
               <div style="background:var(--ae-surf,#0e0e14);border-left:1px solid var(--ae-line,rgba(255,255,255,.08));padding:18px;transition:background-color .7s ease">
                 <div style="width:88px;height:88px;border-radius:50%;background:linear-gradient(145deg,#2a3a5e,#5b8ac9)"></div>
                 <div style="margin-top:14px;font:600 19px/1.15 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.02em">Radiohead</div>
-                <div style="margin-top:5px;font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">9 albums · 118 tracks · 8 h 12 m</div>
-                <div style="margin-top:18px;font:600 9px/1 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))">Albums</div>
+                <div style="margin-top:5px;font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))" data-i18n="ui.artistmeta">9 albums · 118 tracks · 8 h 12 m</div>
+                <div style="margin-top:18px;font:600 9px/1 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46))" data-i18n="ui.albums">Albums</div>
                 <div style="margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px">
                   <sc-for list="{{ small }}" as="s" hint-placeholder-count="6">
                     <div style="width:100%;aspect-ratio:1;border-radius:7px;background:linear-gradient(145deg,{{ s.c1 }},{{ s.c2 }})"></div>
                   </sc-for>
                 </div>
-                <div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--ae-line,rgba(255,255,255,.08));font-size:11.5px;color:var(--ae-t2,rgba(255,255,255,.62));line-height:1.55">No biography, no similar-artist grid. Nothing here is fetched from a network — every number comes from your own files.</div>
+                <div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--ae-line,rgba(255,255,255,.08));font-size:11.5px;color:var(--ae-t2,rgba(255,255,255,.62));line-height:1.55" data-i18n="ui.artistnote">No biography, no similar-artist grid. Nothing here is fetched from a network — every number comes from your own files.</div>
               </div>
             </div>
           </div>
@@ -365,10 +384,10 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
 
 <section id="studio" style="position:relative;z-index:1;padding:clamp(80px,12vw,120px) clamp(16px,4vw,34px) clamp(70px,11vw,110px)">
   <div style="max-width:1180px;margin:0 auto">
-    <div data-rv style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-acc,#8b7cf6)">03 — Skin Studio</div>
+    <div data-rv style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-acc,#8b7cf6)" data-i18n="s3.eyebrow">03 — Skin Studio</div>
     <div data-stack data-cols="1fr minmax(280px,420px)" style="margin-top:18px;display:grid;grid-template-columns:1fr minmax(280px,420px);gap:clamp(18px,3vw,46px);align-items:end">
-      <h2 data-rv data-d="70" style="margin:0;max-width:20ch;font:600 clamp(34px,4.6vw,62px)/1.02 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.035em">Pick a skin. Watch this whole page obey it.</h2>
-      <p data-rv data-d="140" style="margin:0;font:300 15.5px/1.65 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));text-wrap:pretty">A skin is a validated data document, not a stylesheet. 47 tokens, 48 named parts, 11 effects with a declared cost. The app parses it, warns you about it, and compiles it to deterministic CSS.</p>
+      <h2 data-rv data-d="70" style="margin:0;max-width:20ch;font:600 clamp(34px,4.6vw,62px)/1.02 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.035em" data-i18n="s3.h2">Pick a skin. Watch this whole page obey it.</h2>
+      <p data-rv data-d="140" style="margin:0;font:300 15.5px/1.65 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));text-wrap:pretty" data-i18n="s3.p">A skin is a validated data document, not a stylesheet. 47 tokens, 48 named parts, 11 effects with a declared cost. The app parses it, warns you about it, and compiles it to deterministic CSS.</p>
     </div>
 
     <div data-skins data-rv data-d="200" style="margin-top:40px;display:flex;flex-wrap:wrap;gap:12px">
@@ -395,7 +414,7 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
           <span style="font:550 12.5px/1 Geist,sans-serif">skin.json</span>
           <span data-skin-file style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">midnight.aeskin</span>
           <div style="flex:1"></div>
-          <span style="padding:3px 9px;border-radius:99px;background:rgba(74,222,128,.14);color:#4ade80;font:600 9.5px/1.4 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase">valid</span>
+          <span style="padding:3px 9px;border-radius:99px;background:rgba(74,222,128,.14);color:#4ade80;font:600 9.5px/1.4 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase" data-i18n="studio.valid">valid</span>
         </div>
         <pre data-code style="margin:0;padding:18px 16px;font:11.5px/1.75 'Geist Mono',monospace;color:var(--ae-t2,rgba(255,255,255,.62));overflow:auto;max-height:326px;white-space:pre">loading…</pre>
       </div>
@@ -404,9 +423,9 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
         <div data-rv data-d="80" style="border-radius:16px;border:1px solid var(--ae-line,rgba(255,255,255,.10));background:var(--ae-surf,#0e0e14);padding:18px;transition:background-color .7s ease,border-color .7s ease">
           <div style="display:flex;align-items:center;gap:9px">
             <svg width="15" height="15" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-skin"></use></svg>
-            <span style="font:550 12.5px/1 Geist,sans-serif">Token registry</span>
+            <span data-i18n="studio.tokenreg" style="font:550 12.5px/1 Geist,sans-serif">Token registry</span>
             <div style="flex:1"></div>
-            <span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">47 tokens · 21 required</span>
+            <span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))" data-i18n="studio.tokenmeta">47 tokens · 21 required</span>
           </div>
           <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px">
             <sc-for list="{{ tokens }}" as="t" hint-placeholder-count="12">
@@ -421,7 +440,7 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
         <div data-rv data-d="140" style="border-radius:16px;border:1px solid var(--ae-line,rgba(255,255,255,.10));background:var(--ae-surf,#0e0e14);padding:18px;transition:background-color .7s ease,border-color .7s ease">
           <div style="display:flex;align-items:center;gap:9px">
             <svg width="15" height="15" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-check"></use></svg>
-            <span style="font:550 12.5px/1 Geist,sans-serif">Contrast &amp; cost, checked live</span>
+            <span data-i18n="studio.contrast" style="font:550 12.5px/1 Geist,sans-serif">Contrast &amp; cost, checked live</span>
           </div>
           <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px">
             <div style="display:flex;align-items:center;gap:11px">
@@ -441,7 +460,7 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
             </div>
           </div>
           <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--ae-line,rgba(255,255,255,.08));display:flex;align-items:center;gap:11px;transition:border-color .7s ease">
-            <span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">Effect budget</span>
+            <span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))" data-i18n="studio.budget">Effect budget</span>
             <span style="flex:1;display:flex;gap:3px">
               <sc-for list="{{ budget }}" as="b" hint-placeholder-count="10">
                 <span data-cost="{{ b.i }}" style="flex:1;height:8px;border-radius:3px;background:var(--ae-raise,#1e1e2a);transition:background-color .4s ease"></span>
@@ -467,8 +486,8 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
 
 <section id="format" style="position:relative;z-index:1;padding:0 clamp(16px,4vw,34px) clamp(80px,12vw,120px)">
   <div style="max-width:1180px;margin:0 auto;padding:clamp(26px,5vw,52px);border-radius:22px;border:1px solid var(--ae-line,rgba(255,255,255,.10));background:var(--ae-surf,#0e0e14);transition:background-color .7s ease,border-color .7s ease">
-    <div data-rv style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-acc,#8b7cf6)">04 — The contract</div>
-    <h2 data-rv data-d="70" style="margin:16px 0 0;max-width:24ch;font:600 clamp(30px,3.6vw,46px)/1.06 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">A skin cannot break the app. That's a property of the format, not a promise.</h2>
+    <div data-rv style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-acc,#8b7cf6)" data-i18n="s4.eyebrow">04 — The contract</div>
+    <h2 data-rv data-d="70" style="margin:16px 0 0;max-width:24ch;font:600 clamp(30px,3.6vw,46px)/1.06 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em" data-i18n="s4.h2">A skin cannot break the app. That's a property of the format, not a promise.</h2>
     <div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px">
       <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
         <div data-rv>
@@ -483,10 +502,10 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
 
 <section id="roadmap" style="position:relative;z-index:1;padding:0 clamp(16px,4vw,34px) clamp(84px,13vw,130px)">
   <div style="max-width:1180px;margin:0 auto">
-    <div data-rv style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-acc,#8b7cf6)">05 — Roadmap</div>
+    <div data-rv style="font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ae-acc,#8b7cf6)" data-i18n="s5.eyebrow">05 — Roadmap</div>
     <div data-stack data-cols="1fr minmax(280px,400px)" style="margin-top:18px;display:grid;grid-template-columns:1fr minmax(280px,400px);gap:clamp(18px,3vw,46px);align-items:end">
-      <h2 data-rv data-d="70" style="margin:0;max-width:20ch;font:600 clamp(34px,4.4vw,58px)/1.03 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.035em">What isn't there yet, and why.</h2>
-      <p data-rv data-d="130" style="margin:0;font:300 15px/1.65 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));text-wrap:pretty">Nine of the 48 registered parts don't render today. They stay in the registry so that skins written now still fit the app later.</p>
+      <h2 data-rv data-d="70" style="margin:0;max-width:20ch;font:600 clamp(34px,4.4vw,58px)/1.03 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.035em" data-i18n="s5.h2">What isn't there yet, and why.</h2>
+      <p data-rv data-d="130" style="margin:0;font:300 15px/1.65 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));text-wrap:pretty" data-i18n="s5.p">Nine of the 48 registered parts don't render today. They stay in the registry so that skins written now still fit the app later.</p>
     </div>
     <div data-rv data-d="60" style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:14px">
       <sc-for list="{{ platforms }}" as="p" hint-placeholder-count="4">
@@ -506,15 +525,15 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
     </div>
 
     <div data-rv data-d="80" style="margin-top:clamp(44px,7vw,72px);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
-      <h3 style="margin:0;font:600 clamp(21px,2.4vw,28px)/1.1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">Windows — ordine di implementazione</h3>
-      <span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">14 voci · 2 chiuse · 2 in corso · 21%</span>
+      <h3 data-i18n="win.h3" style="margin:0;font:600 clamp(21px,2.4vw,28px)/1.1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em">Windows — implementation order</h3>
+      <span data-i18n="win.meta" style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">14 items · 2 done · 2 in progress · 21%</span>
     </div>
     <div style="margin-top:22px;display:flex;flex-direction:column">
       <sc-for list="{{ winRoadmap }}" as="r" hint-placeholder-count="14">
-        <div data-rv data-road data-stack data-cols="30px 104px 1fr" style="display:grid;grid-template-columns:30px 104px 1fr;gap:clamp(8px,2vw,22px);align-items:baseline;padding:16px 6px;border-top:1px solid var(--ae-line,rgba(255,255,255,.08));transition:background-color .3s ease,border-color .7s ease,padding-left .3s ease">
-          <span style="font:500 10.5px/1 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">{{ r.n }}</span>
-          <span style="font:500 10.5px/1 'Geist Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:{{ r.sc }}">{{ r.s }}</span>
-          <div style="font:400 14.5px/1.5 Geist,sans-serif;letter-spacing:-.005em;color:var(--ae-t1,rgba(255,255,255,.94));text-wrap:pretty">{{ r.t }}</div>
+        <div data-rv data-road style="display:flex;flex-wrap:wrap;gap:6px clamp(10px,2vw,22px);align-items:baseline;padding:15px 6px;border-top:1px solid var(--ae-line,rgba(255,255,255,.08));transition:background-color .3s ease,border-color .7s ease,padding-left .3s ease">
+          <span style="flex:none;width:26px;font:500 10.5px/1.4 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">{{ r.n }}</span>
+          <span style="flex:none;min-width:96px;font:500 10.5px/1.4 'Geist Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:{{ r.sc }}">{{ r.s }}</span>
+          <div style="flex:1 1 320px;min-width:0;font:400 clamp(13.5px,3.4vw,14.5px)/1.5 Geist,sans-serif;letter-spacing:-.005em;color:var(--ae-t1,rgba(255,255,255,.94));text-wrap:pretty">{{ r.t }}</div>
         </div>
       </sc-for>
       <div style="border-top:1px solid var(--ae-line,rgba(255,255,255,.08))"></div>
@@ -527,33 +546,33 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
     <div style="position:absolute;inset:-40% -10% auto;height:120%;background:radial-gradient(60% 60% at 50% 0%,var(--ae-glowA,rgba(139,124,246,.30)),transparent 70%);animation:ae-drift 18s ease-in-out infinite;pointer-events:none"></div>
     <div style="position:relative">
       <svg width="30" height="30" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-mark"></use></svg>
-      <h2 style="margin:22px auto 0;max-width:17ch;font:600 clamp(32px,4.2vw,54px)/1.04 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.035em">Early access opens in waves. Get in the first one.</h2>
-      <p style="margin:16px auto 0;max-width:52ch;font:300 15.5px/1.62 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));text-wrap:pretty">Builds for macOS, Windows and Linux, plus the skin format spec and the studio while it's still rough enough to argue with. Everything ships from github.com/FedericoBaratti/Aether.</p>
+      <h2 style="margin:22px auto 0;max-width:17ch;font:600 clamp(32px,4.2vw,54px)/1.04 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.035em" data-i18n="access.h2">Early access opens in waves. Get in the first one.</h2>
+      <p style="margin:16px auto 0;max-width:52ch;font:300 15.5px/1.62 Geist,sans-serif;color:var(--ae-t2,rgba(255,255,255,.62));text-wrap:pretty" data-i18n="access.p">Builds for macOS, Windows and Linux, plus the skin format spec and the studio while it's still rough enough to argue with. Everything ships from github.com/FedericoBaratti/Aether.</p>
       <form data-form data-formrow style="margin:32px auto 0;display:flex;gap:9px;max-width:470px">
         <input data-email type="email" placeholder="you@domain.com" style="flex:1;height:50px;padding:0 18px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.14));background:var(--ae-bg,#09090d);color:var(--ae-t1,rgba(255,255,255,.94));font:15px Geist,sans-serif;outline:none;transition:border-color .3s ease,background-color .7s ease">
-        <button data-submit type="submit" style="height:50px;padding:0 24px;border:0;border-radius:99px;background:var(--ae-acc,#8b7cf6);color:var(--ae-ink,#09090d);font:600 14.5px Geist,sans-serif;cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .7s ease">Join the list</button>
+        <button data-submit data-i18n="access.btn" type="submit" style="height:50px;padding:0 24px;border:0;border-radius:99px;background:var(--ae-acc,#8b7cf6);color:var(--ae-ink,#09090d);font:600 14.5px Geist,sans-serif;cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .7s ease">Join the list</button>
       </form>
-      <div data-formnote style="margin:14px 0 0;font:11.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">One email when your wave opens. Nothing else, ever.</div>
+      <div data-formnote data-i18n="access.note" style="margin:14px 0 0;font:11.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">One email when your wave opens. Nothing else, ever.</div>
       <div style="margin:30px 0 0;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
         <a href="https://github.com/FedericoBaratti/Aether" target="_blank" rel="noopener" data-magnet style="display:flex;align-items:center;gap:9px;height:42px;padding:0 20px;border-radius:99px;border:1px solid var(--ae-line,rgba(255,255,255,.14));color:var(--ae-t1,rgba(255,255,255,.94));font:550 13.5px/1 Geist,sans-serif;transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .3s ease">
-          <svg width="15" height="15" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-star"></use></svg>Star on GitHub<span style="font:11px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">FedericoBaratti/Aether</span>
+          <svg width="15" height="15" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-star"></use></svg><span data-i18n="nav.star">Star on GitHub</span><span style="font:11px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">FedericoBaratti/Aether</span>
         </a>
-        <a href="#format" style="display:flex;align-items:center;gap:8px;height:42px;padding:0 20px;border-radius:99px;color:var(--ae-t2,rgba(255,255,255,.62));font:500 13.5px/1 Geist,sans-serif">Read the skin spec<svg width="14" height="14"><use href="#a-chev-r"></use></svg></a>
+        <a href="#format" style="display:flex;align-items:center;gap:8px;height:42px;padding:0 20px;border-radius:99px;color:var(--ae-t2,rgba(255,255,255,.62));font:500 13.5px/1 Geist,sans-serif"><span data-i18n="access.spec">Read the skin spec</span><svg width="14" height="14"><use href="#a-chev-r"></use></svg></a>
       </div>
     </div>
   </div>
 </section>
 
 <footer style="position:relative;z-index:1;padding:30px clamp(16px,4vw,34px) 44px;border-top:1px solid var(--ae-line,rgba(255,255,255,.08));transition:border-color .7s ease">
-  <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;align-items:center">
+  <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center">
     <div style="display:flex;align-items:center;gap:9px"><svg width="17" height="17" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-mark"></use></svg><span style="font:600 13px/1 Geist,sans-serif">Aether</span></div>
-    <span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))">Local-first music player · Early access</span>
+    <span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))" data-i18n="footer.tag">Local-first music player · Early access</span>
     <div style="flex:1"></div>
-    <div style="display:flex;gap:20px;font:500 12.5px/1 Geist,sans-serif">
-      <a href="#tour" style="color:var(--ae-t2,rgba(255,255,255,.62))">The app</a>
-      <a href="#studio" style="color:var(--ae-t2,rgba(255,255,255,.62))">Skin Studio</a>
-      <a href="#roadmap" style="color:var(--ae-t2,rgba(255,255,255,.62))">Roadmap</a>
-      <a href="#access" style="color:var(--ae-t2,rgba(255,255,255,.62))">Early access</a>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 20px;font:500 12.5px/1 Geist,sans-serif">
+      <a href="#tour" data-i18n="nav.app" style="color:var(--ae-t2,rgba(255,255,255,.62))">The app</a>
+      <a href="#studio" data-i18n="nav.studio" style="color:var(--ae-t2,rgba(255,255,255,.62))">Skin Studio</a>
+      <a href="#roadmap" data-i18n="nav.roadmap" style="color:var(--ae-t2,rgba(255,255,255,.62))">Roadmap</a>
+      <a href="#access" data-i18n="nav.badge" style="color:var(--ae-t2,rgba(255,255,255,.62))">Early access</a>
       <a href="https://github.com/FedericoBaratti/Aether" target="_blank" rel="noopener" style="color:var(--ae-t2,rgba(255,255,255,.62))">GitHub</a>
       <a href="https://github.com/FedericoBaratti/Aether/releases" target="_blank" rel="noopener" style="color:var(--ae-t2,rgba(255,255,255,.62))">Releases</a>
     </div>
@@ -616,8 +635,315 @@ const SKINS = {
 const TOKENS = ['color.bg', 'color.surface', 'color.raised', 'color.hairline', 'color.text.1', 'color.text.2', 'color.text.3', 'color.accent', 'color.accent.soft', 'color.accent.alt', 'color.ink', 'color.glow'];
 const TOKEN_VARS = ['--ae-bg', '--ae-surf', '--ae-raise', '--ae-line', '--ae-t1', '--ae-t2', '--ae-t3', '--ae-acc', '--ae-accSoft', '--ae-acc2', '--ae-ink', '--ae-glowA'];
 
+
+const I18N = {
+  en: {
+    'nav.badge': 'Early access', 'nav.app': 'The app', 'nav.studio': 'Skin Studio', 'nav.format': 'Format', 'nav.roadmap': 'Roadmap', 'nav.star': 'Star on GitHub',
+    'hero.badge': 'A local music player with a skin engine',
+    'hero.l1': 'Your library.', 'hero.l2': 'Your machine.', 'hero.l3': 'Your look.',
+    'hero.lede': 'Aether plays the files you already own — no account, no stream, no telemetry. And every surface it draws is a token you can redefine, in a skin file that the app validates before it renders a single pixel.',
+    'hero.cta1': 'Request early access', 'hero.m3': 'Offline by design',
+    'ui.albums': 'Albums', 'ui.albumsLow': 'albums', 'ui.tracks': 'Tracks', 'ui.artists': 'Artists', 'ui.fav': 'Favourites', 'ui.settings': 'Settings',
+    'ui.playlists': 'Playlists', 'ui.pl1': 'Late shift', 'ui.pl2': 'Vinyl rips 2019', 'ui.pl3': 'Kitchen, loud', 'ui.pl4': 'Ambient, long',
+    'ui.scan': 'Scan complete', 'ui.scanmeta': '5 108 tracks · 41 min ago', 'ui.library': 'Library', 'ui.libmeta': '5 108 · 14 d 6 h',
+    'ui.colTitle': 'Title', 'ui.colAlbum': 'Album', 'ui.colTime': 'Time', 'ui.upnext': 'Up next', 'ui.search': 'Search…',
+    'ui.nowplaying': 'Now Playing', 'ui.sortedadded': '412 · sorted by added', 'ui.gapless': 'Gapless',
+    'ui.lyricsoff': 'Lyrics & spectrum are off', 'ui.lyricsoffb': "The audio core exposes neither yet. A command that doesn't exist is declared, not hidden.",
+    'ui.artistmeta': '9 albums · 118 tracks · 8 h 12 m',
+    'ui.artistnote': 'No biography, no similar-artist grid. Nothing here is fetched from a network — every number comes from your own files.',
+    's1.eyebrow': '01 — The idea', 's1.h2': 'A player that answers to the person who owns the files.',
+    's2.eyebrow': '02 — The app',
+    's3.eyebrow': '03 — Skin Studio', 's3.h2': 'Pick a skin. Watch this whole page obey it.',
+    's3.p': 'A skin is a validated data document, not a stylesheet. 47 tokens, 48 named parts, 11 effects with a declared cost. The app parses it, warns you about it, and compiles it to deterministic CSS.',
+    'studio.valid': 'valid', 'studio.tokenreg': 'Token registry', 'studio.tokenmeta': '47 tokens · 21 required', 'studio.contrast': 'Contrast & cost, checked live', 'studio.budget': 'Effect budget',
+    's4.eyebrow': '04 — The contract', 's4.h2': "A skin cannot break the app. That's a property of the format, not a promise.",
+    's5.eyebrow': '05 — Roadmap', 's5.h2': "What isn't there yet, and why.",
+    's5.p': "Nine of the 48 registered parts don't render today. They stay in the registry so that skins written now still fit the app later.",
+    'win.h3': 'Windows — implementation order', 'win.meta': '14 items · 2 done · 2 in progress · 21%',
+    'access.h2': 'Early access opens in waves. Get in the first one.',
+    'access.p': "Builds for macOS, Windows and Linux, plus the skin format spec and the studio while it's still rough enough to argue with. Everything ships from github.com/FedericoBaratti/Aether.",
+    'access.ph': 'you@domain.com', 'access.btn': 'Join the list', 'access.note': 'One email when your wave opens. Nothing else, ever.',
+    'access.done': 'You are in', 'access.donenote': 'Wave 1 opens next. We will write once, from a real address.',
+    'access.spec': 'Read the skin spec',
+    'footer.tag': 'Local-first music player · Early access',
+    marquee: ['FLAC', 'ALAC', 'WAV', 'AIFF', 'MP3', 'OGG', 'OPUS', 'Gapless playback', 'ReplayGain', 'Cue sheets', 'Embedded art', 'Rust core', '5 000 tracks, no lag', 'No account', 'No telemetry'],
+    pillars: [
+      { t: 'Nothing leaves the machine', b: 'No account, no sync, no analytics. Aether opens files, reads their tags, and stops there — the network stack is never touched.' },
+      { t: 'Dense where it counts', b: '40px rows, air above the list and not between its lines. A library of five thousand tracks scrolls at frame rate, because it is meant to be scrolled.' },
+      { t: 'The markup names its parts', b: 'Every surface the app paints carries a part name. That is what a skin binds to — not a class you guessed from devtools.' },
+      { t: 'Two doors per command', b: 'Right-click is never the only way in. Beside it there is always a visible control or an announced shortcut.' }
+    ],
+    chapters: [
+      { t: 'Library', b: 'Navigate on the left, look in the middle, listen on the right. The three columns never trade places.', pts: [{ t: '412 albums, 5 108 tracks, sorted locally' }, { t: 'Right column is the home of Now Playing' }, { t: 'Search from anywhere with /' }] },
+      { t: 'Now Playing', b: 'Not a second screen — the same part, grown. Cover art is the only coloured thing in the app, and it tints the room.', pts: [{ t: 'Opens from the art, the ⤢ button, or F' }, { t: 'Closes with Esc, the chevron, or the same door' }, { t: 'Disabled controls say why they are disabled' }] },
+      { t: 'Artists', b: 'Every number on this screen came off your own disk. Nothing is fetched, so nothing is wrong.', pts: [{ t: '287 artists, counted from tags' }, { t: 'No biography, no similar-artist grid' }, { t: 'Albums ordered by year, not by popularity' }] }
+    ],
+    skinMeta: { midnight: 'default · 4 effects', rust: 'warm · 6 effects', chlorophyll: 'cold · 3 effects', paper: 'light · 2 effects' },
+    ruleWord: 'Rule',
+    studioPoints: [
+      { t: 'You cannot write what the format refuses', b: 'Every control is the shape of a type in the crate. No free-text field where the document wants an enum — that is why a skin cannot break the app.' },
+      { t: 'The preview is the app, not a swatch', b: 'It is the real window with the skin applied. Screens you cannot reach by listening — modal, empty, loading — come from a picker.' },
+      { t: 'Cost is visible while you spend it', b: 'Each effect carries its weight next to its name and the surface counts to ten. You find out here, not on a phone dropping frames.' }
+    ],
+    stats: [
+      { t: 'Tokens', b: 'Each with a description and a required flag, read straight from the registry.' },
+      { t: 'Named parts', b: 'Every part declares its layers. Misspell one and the parser suggests the nearest.' },
+      { t: 'Effects', b: 'Blur, glow, grain, noise — each with a declared render cost out of ten.' },
+      { t: 'Warning kinds', b: 'Contrast, unknown part, unused pattern, missing required token — checked before compile.' }
+    ],
+    platStatus: { prog: 'In progress', none: 'Not started' },
+    road: { done: 'Done', prog: 'In progress', todo: 'To do' },
+    roadItems: [
+      'implement Google services with Google Drive to upload metadata and skins as a backup, in case a user has to reset their computer and needs to recover all their music and skins.',
+      'implement a keyless import system from Spotify',
+      'finish Skin Studio',
+      'implement an automatic metadata management and enrichment system',
+      'make layout and graphics fully modular and editable in Skin Studio. /add and remove components and/or create new ones',
+      'implement a keyless import system from YT',
+      'implement a digital equaliser for adjusting the 0-2 kHz, 2.4, 4-6, 6-8, 8-10, 10-12, 12-14, 14-16, 16-18, 18-20 bands',
+      'implement a graphic enhancement to playback, taking the playback bar from SoundCloud',
+      'implement a system that auto-fetches song lyrics asynchronously. essentially it builds a new database of lyrics synced to the music, always keyless',
+      'implement in Skin Studio a system that allows creating animations to place anywhere and/or at any moment in the app',
+      'implement smart playlists',
+      'add the OpenRouter key in settings to use free AI models for generating recommended playlists.',
+      'implement in Skin Studio a chat with tools with an LLM from various providers (google, anthropic, grok, open ai, ollama, lm studio and openrouter) for assisted skin creation.',
+      'fix graphic bugs and/or inconsistencies for a more premium look.'
+    ]
+  },
+  it: {
+    'nav.badge': 'Accesso anticipato', 'nav.app': "L'app", 'nav.studio': 'Skin Studio', 'nav.format': 'Formato', 'nav.roadmap': 'Roadmap', 'nav.star': 'Star su GitHub',
+    'hero.badge': 'Un lettore musicale locale con un motore di skin',
+    'hero.l1': 'La tua libreria.', 'hero.l2': 'Il tuo computer.', 'hero.l3': 'Il tuo aspetto.',
+    'hero.lede': "Aether riproduce i file che possiedi già — nessun account, nessuno streaming, nessuna telemetria. E ogni superficie che disegna è un token che puoi ridefinire, in un file skin che l'app valida prima di disegnare un solo pixel.",
+    'hero.cta1': "Richiedi l'accesso anticipato", 'hero.m3': 'Offline per progetto',
+    'ui.albums': 'Album', 'ui.albumsLow': 'album', 'ui.tracks': 'Brani', 'ui.artists': 'Artisti', 'ui.fav': 'Preferiti', 'ui.settings': 'Impostazioni',
+    'ui.playlists': 'Playlist', 'ui.pl1': 'Turno di notte', 'ui.pl2': 'Rip da vinile 2019', 'ui.pl3': 'Cucina, alto volume', 'ui.pl4': 'Ambient, lunghi',
+    'ui.scan': 'Scansione completata', 'ui.scanmeta': '5 108 brani · 41 min fa', 'ui.library': 'Libreria', 'ui.libmeta': '5 108 · 14 g 6 h',
+    'ui.colTitle': 'Titolo', 'ui.colAlbum': 'Album', 'ui.colTime': 'Durata', 'ui.upnext': 'In coda', 'ui.search': 'Cerca…',
+    'ui.nowplaying': 'In riproduzione', 'ui.sortedadded': '412 · ordinati per aggiunta', 'ui.gapless': 'Senza pause',
+    'ui.lyricsoff': 'Testi e spettro sono disattivati', 'ui.lyricsoffb': 'Il core audio non li espone ancora. Un comando che non esiste viene dichiarato, non nascosto.',
+    'ui.artistmeta': '9 album · 118 brani · 8 h 12 m',
+    'ui.artistnote': 'Nessuna biografia, nessuna griglia di artisti simili. Niente qui viene scaricato dalla rete — ogni numero viene dai tuoi file.',
+    's1.eyebrow': "01 — L'idea", 's1.h2': 'Un lettore che risponde a chi possiede i file.',
+    's2.eyebrow': "02 — L'app",
+    's3.eyebrow': '03 — Skin Studio', 's3.h2': 'Scegli una skin. Guarda tutta questa pagina obbedirle.',
+    's3.p': "Una skin è un documento dati validato, non un foglio di stile. 47 token, 48 parti con nome, 11 effetti con un costo dichiarato. L'app la analizza, ti avverte e la compila in CSS deterministico.",
+    'studio.valid': 'valida', 'studio.tokenreg': 'Registro dei token', 'studio.tokenmeta': '47 token · 21 obbligatori', 'studio.contrast': 'Contrasto e costo, verificati dal vivo', 'studio.budget': 'Budget effetti',
+    's4.eyebrow': '04 — Il contratto', 's4.h2': "Una skin non può rompere l'app. È una proprietà del formato, non una promessa.",
+    's5.eyebrow': '05 — Roadmap', 's5.h2': "Cosa non c'è ancora, e perché.",
+    's5.p': "Nove delle 48 parti registrate oggi non vengono disegnate. Restano nel registro perché le skin scritte adesso continuino a calzare l'app domani.",
+    'win.h3': 'Windows — ordine di implementazione', 'win.meta': '14 voci · 2 chiuse · 2 in corso · 21%',
+    'access.h2': "L'accesso anticipato apre a ondate. Entra nella prima.",
+    'access.p': 'Build per macOS, Windows e Linux, più le specifiche del formato skin e lo studio finché è ancora abbastanza grezzo da poterci discutere. Tutto parte da github.com/FedericoBaratti/Aether.',
+    'access.ph': 'tu@dominio.com', 'access.btn': 'Iscrivimi', 'access.note': "Una email quando si apre la tua ondata. Nient'altro, mai.",
+    'access.done': 'Ci sei', 'access.donenote': 'La prima ondata è la prossima. Scriveremo una volta sola, da un indirizzo vero.',
+    'access.spec': 'Leggi le specifiche skin',
+    'footer.tag': 'Lettore musicale local-first · Accesso anticipato',
+    marquee: ['FLAC', 'ALAC', 'WAV', 'AIFF', 'MP3', 'OGG', 'OPUS', 'Riproduzione gapless', 'ReplayGain', 'Cue sheet', 'Copertine incorporate', 'Core in Rust', '5 000 brani, zero lag', 'Nessun account', 'Nessuna telemetria'],
+    pillars: [
+      { t: 'Niente lascia il computer', b: 'Nessun account, nessuna sincronizzazione, nessuna analitica. Aether apre i file, legge i tag e si ferma lì — lo stack di rete non viene mai toccato.' },
+      { t: 'Densa dove serve', b: 'Righe da 40px, aria sopra la lista e non tra le sue linee. Una libreria da cinquemila brani scorre a frame rate, perché è fatta per essere scorsa.' },
+      { t: 'Il markup dà un nome alle sue parti', b: "Ogni superficie che l'app disegna porta il nome di una parte. È a quello che si aggancia una skin — non a una classe indovinata nei devtools." },
+      { t: 'Due porte per ogni comando', b: "Il tasto destro non è mai l'unica via d'accesso. Accanto c'è sempre un controllo visibile o una scorciatoia annunciata." }
+    ],
+    chapters: [
+      { t: 'Libreria', b: 'Naviga a sinistra, guarda al centro, ascolta a destra. Le tre colonne non si scambiano mai di posto.', pts: [{ t: '412 album, 5 108 brani, ordinati in locale' }, { t: 'La colonna destra è la casa di In riproduzione' }, { t: 'Cerca da ovunque con /' }] },
+      { t: 'In riproduzione', b: "Non una seconda schermata — la stessa parte, cresciuta. La copertina è l'unica cosa colorata nell'app, e tinge la stanza.", pts: [{ t: 'Si apre dalla copertina, dal pulsante ⤢ o con F' }, { t: 'Si chiude con Esc, con il chevron o dalla stessa porta' }, { t: 'I controlli disattivati dicono perché lo sono' }] },
+      { t: 'Artisti', b: 'Ogni numero in questa schermata viene dal tuo disco. Niente viene scaricato, quindi niente è sbagliato.', pts: [{ t: '287 artisti, contati dai tag' }, { t: 'Nessuna biografia, nessuna griglia di artisti simili' }, { t: 'Album ordinati per anno, non per popolarità' }] }
+    ],
+    skinMeta: { midnight: 'predefinita · 4 effetti', rust: 'calda · 6 effetti', chlorophyll: 'fredda · 3 effetti', paper: 'chiara · 2 effetti' },
+    ruleWord: 'Regola',
+    studioPoints: [
+      { t: 'Non puoi scrivere ciò che il formato rifiuta', b: "Ogni controllo ha la forma di un tipo nel crate. Nessun campo di testo libero dove il documento vuole un enum — per questo una skin non può rompere l'app." },
+      { t: "L'anteprima è l'app, non un campione", b: 'È la finestra vera con la skin applicata. Le schermate che non puoi raggiungere ascoltando — modale, vuota, in caricamento — arrivano da un selettore.' },
+      { t: 'Il costo è visibile mentre lo spendi', b: 'Ogni effetto porta il suo peso accanto al nome e la superficie conta fino a dieci. Lo scopri qui, non su un telefono che perde frame.' }
+    ],
+    stats: [
+      { t: 'Token', b: 'Ognuno con una descrizione e un flag di obbligatorietà, letti direttamente dal registro.' },
+      { t: 'Parti con nome', b: 'Ogni parte dichiara i suoi livelli. Sbagliane il nome e il parser suggerisce il più vicino.' },
+      { t: 'Effetti', b: 'Sfocatura, bagliore, grana, rumore — ognuno con un costo di rendering dichiarato su dieci.' },
+      { t: 'Tipi di avviso', b: 'Contrasto, parte sconosciuta, pattern inutilizzato, token obbligatorio mancante — controllati prima della compilazione.' }
+    ],
+    platStatus: { prog: 'In corso', none: 'Non iniziato' },
+    road: { done: 'Fatto', prog: 'In corso', todo: 'Da fare' },
+    roadItems: [
+      'implementare servizi google con google drive per caricare metadati e skin per il backup casomai un utente dovesse ripristinare il computer e quindi recuperare tutta la musica e skin.',
+      'implementare un sistema di importazione da Spotify keyless',
+      'finire skin studio',
+      'implementare un sistema di gestione e arricchimento metadati automatico',
+      'rendere layout e grafica completamente modulare e modificabile su skin studio. /aggiungere togliere componenti e/o crearne di nuovi',
+      'implementare un sistema di importazione da YT keyless',
+      'implementare un equalizzatore digitale per le modifiche delle bande 0-2Khz, 2.4, 4-6, 6-8, 8-10, 10-12, 12-14, 14-16, 16-18, 18-20',
+      'implementare un graphic enhancement alla riproduzione prendendo la barra di riproduzione da soundcloud',
+      'implementare un sistema di auto get delle lyrics delle canzoni asincrone. sostanzialmente va a crearsi un nuovo database con le lirics sincronizzate con la musica, sempre keyless',
+      "implementare in skin studio un sistema che permetta la creazioni di animazioni da inserire in qualsivolgia posto e/o momento dell'app",
+      'implementare playlist smart',
+      'aggiungere in impostazioni la chiave di openrouter per usare modelli di ia gratuiti per generare playlist consigliate.',
+      'implementare in skin studio una chat con tool con un LLM da vari provider (google, anthropic, grok, open ai, ollama, lm studio e openrouter) per la creazione assistita delle skin.',
+      'fixare bug grafici e/o incoerenze per un look più premium.'
+    ]
+  },
+  fr: {
+    'nav.badge': 'Accès anticipé', 'nav.app': "L'app", 'nav.studio': 'Skin Studio', 'nav.format': 'Format', 'nav.roadmap': 'Feuille de route', 'nav.star': 'Star sur GitHub',
+    'hero.badge': 'Un lecteur de musique local avec un moteur de skins',
+    'hero.l1': 'Votre bibliothèque.', 'hero.l2': 'Votre machine.', 'hero.l3': 'Votre style.',
+    'hero.lede': "Aether lit les fichiers que vous possédez déjà — pas de compte, pas de flux, pas de télémétrie. Et chaque surface qu'il dessine est un token que vous pouvez redéfinir, dans un fichier de skin que l'app valide avant d'afficher le moindre pixel.",
+    'hero.cta1': "Demander l'accès anticipé", 'hero.m3': 'Hors ligne par conception',
+    'ui.albums': 'Albums', 'ui.albumsLow': 'albums', 'ui.tracks': 'Titres', 'ui.artists': 'Artistes', 'ui.fav': 'Favoris', 'ui.settings': 'Réglages',
+    'ui.playlists': 'Playlists', 'ui.pl1': 'Poste de nuit', 'ui.pl2': 'Rips vinyle 2019', 'ui.pl3': 'Cuisine, fort', 'ui.pl4': 'Ambient, long',
+    'ui.scan': 'Analyse terminée', 'ui.scanmeta': '5 108 titres · il y a 41 min', 'ui.library': 'Bibliothèque', 'ui.libmeta': '5 108 · 14 j 6 h',
+    'ui.colTitle': 'Titre', 'ui.colAlbum': 'Album', 'ui.colTime': 'Durée', 'ui.upnext': 'À suivre', 'ui.search': 'Rechercher…',
+    'ui.nowplaying': 'Lecture en cours', 'ui.sortedadded': '412 · triés par ajout', 'ui.gapless': 'Sans blanc',
+    'ui.lyricsoff': 'Paroles et spectre désactivés', 'ui.lyricsoffb': "Le cœur audio ne les expose pas encore. Une commande qui n'existe pas est déclarée, pas cachée.",
+    'ui.artistmeta': '9 albums · 118 titres · 8 h 12',
+    'ui.artistnote': "Pas de biographie, pas de grille d'artistes similaires. Rien ici n'est téléchargé depuis un réseau — chaque chiffre vient de vos propres fichiers.",
+    's1.eyebrow': "01 — L'idée", 's1.h2': 'Un lecteur qui obéit à la personne qui possède les fichiers.',
+    's2.eyebrow': "02 — L'app",
+    's3.eyebrow': '03 — Skin Studio', 's3.h2': 'Choisissez une skin. Regardez toute cette page lui obéir.',
+    's3.p': "Une skin est un document de données validé, pas une feuille de style. 47 tokens, 48 parties nommées, 11 effets au coût déclaré. L'app l'analyse, vous avertit et la compile en CSS déterministe.",
+    'studio.valid': 'valide', 'studio.tokenreg': 'Registre des tokens', 'studio.tokenmeta': '47 tokens · 21 requis', 'studio.contrast': 'Contraste et coût, vérifiés en direct', 'studio.budget': "Budget d'effets",
+    's4.eyebrow': '04 — Le contrat', 's4.h2': "Une skin ne peut pas casser l'app. C'est une propriété du format, pas une promesse.",
+    's5.eyebrow': '05 — Feuille de route', 's5.h2': "Ce qui n'est pas encore là, et pourquoi.",
+    's5.p': "Neuf des 48 parties enregistrées ne s'affichent pas aujourd'hui. Elles restent dans le registre pour que les skins écrites maintenant conviennent encore à l'app plus tard.",
+    'win.h3': "Windows — ordre d'implémentation", 'win.meta': '14 entrées · 2 terminées · 2 en cours · 21 %',
+    'access.h2': "L'accès anticipé s'ouvre par vagues. Entrez dans la première.",
+    'access.p': "Des builds pour macOS, Windows et Linux, plus la spécification du format de skin et le studio tant qu'il est encore assez brut pour qu'on en débatte. Tout part de github.com/FedericoBaratti/Aether.",
+    'access.ph': 'vous@domaine.com', 'access.btn': 'Rejoindre la liste', 'access.note': "Un e-mail quand votre vague s'ouvre. Rien d'autre, jamais.",
+    'access.done': 'Vous y êtes', 'access.donenote': "La vague 1 est la prochaine. Nous écrirons une seule fois, depuis une vraie adresse.",
+    'access.spec': 'Lire la spec des skins',
+    'footer.tag': 'Lecteur de musique local-first · Accès anticipé',
+    marquee: ['FLAC', 'ALAC', 'WAV', 'AIFF', 'MP3', 'OGG', 'OPUS', 'Lecture sans blanc', 'ReplayGain', 'Feuilles cue', 'Pochettes intégrées', 'Cœur en Rust', '5 000 titres, sans lag', 'Pas de compte', 'Pas de télémétrie'],
+    pillars: [
+      { t: 'Rien ne quitte la machine', b: "Pas de compte, pas de synchronisation, pas d'analytique. Aether ouvre les fichiers, lit leurs tags et s'arrête là — la pile réseau n'est jamais touchée." },
+      { t: "Dense là où il faut", b: "Des lignes de 40px, de l'air au-dessus de la liste et non entre ses lignes. Une bibliothèque de cinq mille titres défile à pleine cadence, parce qu'elle est faite pour être parcourue." },
+      { t: 'Le markup nomme ses parties', b: "Chaque surface que l'app dessine porte un nom de partie. C'est à cela qu'une skin se lie — pas à une classe devinée dans les devtools." },
+      { t: 'Deux portes par commande', b: "Le clic droit n'est jamais la seule entrée. À côté, il y a toujours un contrôle visible ou un raccourci annoncé." }
+    ],
+    chapters: [
+      { t: 'Bibliothèque', b: 'Naviguez à gauche, regardez au milieu, écoutez à droite. Les trois colonnes ne changent jamais de place.', pts: [{ t: '412 albums, 5 108 titres, triés en local' }, { t: 'La colonne de droite est la maison de Lecture en cours' }, { t: 'Cherchez de partout avec /' }] },
+      { t: 'Lecture en cours', b: "Pas un second écran — la même partie, agrandie. La pochette est la seule chose colorée de l'app, et elle teinte la pièce.", pts: [{ t: "S'ouvre depuis la pochette, le bouton ⤢ ou F" }, { t: 'Se ferme avec Échap, le chevron ou la même porte' }, { t: 'Les contrôles désactivés disent pourquoi ils le sont' }] },
+      { t: 'Artistes', b: "Chaque chiffre de cet écran vient de votre propre disque. Rien n'est téléchargé, donc rien n'est faux.", pts: [{ t: '287 artistes, comptés depuis les tags' }, { t: "Pas de biographie, pas de grille d'artistes similaires" }, { t: 'Albums classés par année, pas par popularité' }] }
+    ],
+    skinMeta: { midnight: 'par défaut · 4 effets', rust: 'chaude · 6 effets', chlorophyll: 'froide · 3 effets', paper: 'claire · 2 effets' },
+    ruleWord: 'Règle',
+    studioPoints: [
+      { t: 'Vous ne pouvez pas écrire ce que le format refuse', b: "Chaque contrôle a la forme d'un type dans le crate. Aucun champ libre là où le document attend une énumération — c'est pourquoi une skin ne peut pas casser l'app." },
+      { t: "L'aperçu est l'app, pas un échantillon", b: "C'est la vraie fenêtre avec la skin appliquée. Les écrans qu'on ne peut atteindre en écoutant — modale, vide, chargement — viennent d'un sélecteur." },
+      { t: 'Le coût est visible pendant que vous le dépensez', b: "Chaque effet porte son poids à côté de son nom et la surface compte jusqu'à dix. Vous le découvrez ici, pas sur un téléphone qui perd des images." }
+    ],
+    stats: [
+      { t: 'Tokens', b: "Chacun avec une description et un indicateur d'obligation, lus directement dans le registre." },
+      { t: 'Parties nommées', b: "Chaque partie déclare ses couches. Faites une faute et l'analyseur propose la plus proche." },
+      { t: 'Effets', b: 'Flou, halo, grain, bruit — chacun avec un coût de rendu déclaré sur dix.' },
+      { t: "Types d'avertissement", b: 'Contraste, partie inconnue, motif inutilisé, token requis manquant — vérifiés avant compilation.' }
+    ],
+    platStatus: { prog: 'En cours', none: 'Pas commencé' },
+    road: { done: 'Terminé', prog: 'En cours', todo: 'À faire' },
+    roadItems: [
+      "implémenter les services Google avec Google Drive pour téléverser métadonnées et skins en sauvegarde, au cas où un utilisateur devrait réinitialiser son ordinateur et récupérer toute sa musique et ses skins.",
+      "implémenter un système d'import depuis Spotify sans clé",
+      'terminer Skin Studio',
+      "implémenter un système de gestion et d'enrichissement automatique des métadonnées",
+      'rendre la mise en page et le graphisme entièrement modulaires et modifiables dans Skin Studio. /ajouter, retirer des composants et/ou en créer de nouveaux',
+      "implémenter un système d'import depuis YT sans clé",
+      'implémenter un égaliseur numérique pour modifier les bandes 0-2 kHz, 2.4, 4-6, 6-8, 8-10, 10-12, 12-14, 14-16, 16-18, 18-20',
+      'implémenter une amélioration graphique de la lecture en reprenant la barre de lecture de SoundCloud',
+      'implémenter un système de récupération automatique et asynchrone des paroles. il crée en somme une nouvelle base de paroles synchronisées avec la musique, toujours sans clé',
+      "implémenter dans Skin Studio un système permettant de créer des animations à insérer n'importe où et/ou à n'importe quel moment de l'app",
+      'implémenter des playlists intelligentes',
+      'ajouter dans les réglages la clé OpenRouter pour utiliser des modèles d\'IA gratuits et générer des playlists recommandées.',
+      'implémenter dans Skin Studio un chat outillé avec un LLM de divers fournisseurs (google, anthropic, grok, open ai, ollama, lm studio et openrouter) pour la création assistée de skins.',
+      'corriger les bugs graphiques et/ou incohérences pour un rendu plus premium.'
+    ]
+  },
+  de: {
+    'nav.badge': 'Early Access', 'nav.app': 'Die App', 'nav.studio': 'Skin Studio', 'nav.format': 'Format', 'nav.roadmap': 'Roadmap', 'nav.star': 'Star auf GitHub',
+    'hero.badge': 'Ein lokaler Musikplayer mit Skin-Engine',
+    'hero.l1': 'Deine Bibliothek.', 'hero.l2': 'Dein Rechner.', 'hero.l3': 'Dein Look.',
+    'hero.lede': 'Aether spielt die Dateien, die dir bereits gehören — kein Konto, kein Stream, keine Telemetrie. Und jede Fläche, die er zeichnet, ist ein Token, das du neu definieren kannst, in einer Skin-Datei, die die App prüft, bevor sie ein einziges Pixel rendert.',
+    'hero.cta1': 'Early Access anfragen', 'hero.m3': 'Offline von Grund auf',
+    'ui.albums': 'Alben', 'ui.albumsLow': 'Alben', 'ui.tracks': 'Titel', 'ui.artists': 'Künstler', 'ui.fav': 'Favoriten', 'ui.settings': 'Einstellungen',
+    'ui.playlists': 'Playlists', 'ui.pl1': 'Nachtschicht', 'ui.pl2': 'Vinyl-Rips 2019', 'ui.pl3': 'Küche, laut', 'ui.pl4': 'Ambient, lang',
+    'ui.scan': 'Scan abgeschlossen', 'ui.scanmeta': '5 108 Titel · vor 41 Min.', 'ui.library': 'Bibliothek', 'ui.libmeta': '5 108 · 14 T 6 Std',
+    'ui.colTitle': 'Titel', 'ui.colAlbum': 'Album', 'ui.colTime': 'Dauer', 'ui.upnext': 'Als Nächstes', 'ui.search': 'Suchen…',
+    'ui.nowplaying': 'Läuft gerade', 'ui.sortedadded': '412 · nach Hinzugefügt sortiert', 'ui.gapless': 'Lückenlos',
+    'ui.lyricsoff': 'Text & Spektrum sind aus', 'ui.lyricsoffb': 'Der Audio-Core stellt beides noch nicht bereit. Ein Befehl, den es nicht gibt, wird deklariert, nicht versteckt.',
+    'ui.artistmeta': '9 Alben · 118 Titel · 8 Std 12 Min',
+    'ui.artistnote': 'Keine Biografie, kein Raster ähnlicher Künstler. Nichts hier wird aus einem Netzwerk geladen — jede Zahl stammt aus deinen eigenen Dateien.',
+    's1.eyebrow': '01 — Die Idee', 's1.h2': 'Ein Player, der der Person gehorcht, der die Dateien gehören.',
+    's2.eyebrow': '02 — Die App',
+    's3.eyebrow': '03 — Skin Studio', 's3.h2': 'Wähle eine Skin. Sieh zu, wie diese ganze Seite ihr gehorcht.',
+    's3.p': 'Eine Skin ist ein validiertes Datendokument, kein Stylesheet. 47 Tokens, 48 benannte Teile, 11 Effekte mit deklarierten Kosten. Die App parst sie, warnt dich und kompiliert sie zu deterministischem CSS.',
+    'studio.valid': 'gültig', 'studio.tokenreg': 'Token-Register', 'studio.tokenmeta': '47 Tokens · 21 erforderlich', 'studio.contrast': 'Kontrast & Kosten, live geprüft', 'studio.budget': 'Effekt-Budget',
+    's4.eyebrow': '04 — Der Vertrag', 's4.h2': 'Eine Skin kann die App nicht kaputt machen. Das ist eine Eigenschaft des Formats, kein Versprechen.',
+    's5.eyebrow': '05 — Roadmap', 's5.h2': 'Was noch fehlt, und warum.',
+    's5.p': 'Neun der 48 registrierten Teile werden heute nicht gerendert. Sie bleiben im Register, damit heute geschriebene Skins später noch zur App passen.',
+    'win.h3': 'Windows — Implementierungsreihenfolge', 'win.meta': '14 Einträge · 2 erledigt · 2 laufend · 21 %',
+    'access.h2': 'Early Access öffnet in Wellen. Sei in der ersten dabei.',
+    'access.p': 'Builds für macOS, Windows und Linux, dazu die Spezifikation des Skin-Formats und das Studio, solange es noch roh genug ist, um darüber zu streiten. Alles kommt von github.com/FedericoBaratti/Aether.',
+    'access.ph': 'du@domain.com', 'access.btn': 'Eintragen', 'access.note': 'Eine E-Mail, wenn deine Welle öffnet. Sonst nie etwas.',
+    'access.done': 'Du bist dabei', 'access.donenote': 'Welle 1 öffnet als Nächstes. Wir schreiben einmal, von einer echten Adresse.',
+    'access.spec': 'Skin-Spezifikation lesen',
+    'footer.tag': 'Local-First-Musikplayer · Early Access',
+    marquee: ['FLAC', 'ALAC', 'WAV', 'AIFF', 'MP3', 'OGG', 'OPUS', 'Lückenlose Wiedergabe', 'ReplayGain', 'Cue-Sheets', 'Eingebettete Cover', 'Rust-Core', '5 000 Titel, kein Lag', 'Kein Konto', 'Keine Telemetrie'],
+    pillars: [
+      { t: 'Nichts verlässt den Rechner', b: 'Kein Konto, keine Synchronisierung, keine Analyse. Aether öffnet Dateien, liest ihre Tags und hört dort auf — der Netzwerk-Stack wird nie angefasst.' },
+      { t: 'Dicht, wo es zählt', b: '40px-Zeilen, Luft über der Liste und nicht zwischen ihren Zeilen. Eine Bibliothek mit fünftausend Titeln scrollt in voller Bildrate, weil sie zum Scrollen gemacht ist.' },
+      { t: 'Das Markup benennt seine Teile', b: 'Jede Fläche, die die App zeichnet, trägt einen Teilnamen. Daran bindet sich eine Skin — nicht an eine aus den Devtools geratene Klasse.' },
+      { t: 'Zwei Türen pro Befehl', b: 'Rechtsklick ist nie der einzige Weg hinein. Daneben gibt es immer ein sichtbares Bedienelement oder ein angekündigtes Tastenkürzel.' }
+    ],
+    chapters: [
+      { t: 'Bibliothek', b: 'Links navigieren, in der Mitte schauen, rechts hören. Die drei Spalten tauschen nie die Plätze.', pts: [{ t: '412 Alben, 5 108 Titel, lokal sortiert' }, { t: 'Die rechte Spalte ist das Zuhause von Läuft gerade' }, { t: 'Von überall suchen mit /' }] },
+      { t: 'Läuft gerade', b: 'Kein zweiter Bildschirm — dasselbe Teil, gewachsen. Das Cover ist das einzig Farbige in der App, und es färbt den Raum.', pts: [{ t: 'Öffnet über das Cover, die ⤢-Taste oder F' }, { t: 'Schließt mit Esc, dem Chevron oder derselben Tür' }, { t: 'Deaktivierte Bedienelemente sagen, warum sie es sind' }] },
+      { t: 'Künstler', b: 'Jede Zahl auf diesem Bildschirm stammt von deiner eigenen Platte. Nichts wird geladen, also ist nichts falsch.', pts: [{ t: '287 Künstler, aus den Tags gezählt' }, { t: 'Keine Biografie, kein Raster ähnlicher Künstler' }, { t: 'Alben nach Jahr geordnet, nicht nach Beliebtheit' }] }
+    ],
+    skinMeta: { midnight: 'Standard · 4 Effekte', rust: 'warm · 6 Effekte', chlorophyll: 'kalt · 3 Effekte', paper: 'hell · 2 Effekte' },
+    ruleWord: 'Regel',
+    studioPoints: [
+      { t: 'Du kannst nicht schreiben, was das Format ablehnt', b: 'Jedes Bedienelement hat die Form eines Typs im Crate. Kein Freitextfeld, wo das Dokument ein Enum will — deshalb kann eine Skin die App nicht kaputt machen.' },
+      { t: 'Die Vorschau ist die App, kein Farbmuster', b: 'Es ist das echte Fenster mit angewandter Skin. Bildschirme, die man beim Hören nicht erreicht — Modal, Leer, Laden — kommen aus einer Auswahl.' },
+      { t: 'Kosten sind sichtbar, während du sie ausgibst', b: 'Jeder Effekt trägt sein Gewicht neben seinem Namen, und die Fläche zählt bis zehn. Du erfährst es hier, nicht auf einem Handy, das Frames verliert.' }
+    ],
+    stats: [
+      { t: 'Tokens', b: 'Jedes mit Beschreibung und Pflicht-Flag, direkt aus dem Register gelesen.' },
+      { t: 'Benannte Teile', b: 'Jedes Teil deklariert seine Ebenen. Vertipp dich und der Parser schlägt das nächste vor.' },
+      { t: 'Effekte', b: 'Blur, Glow, Grain, Noise — jeweils mit deklarierten Renderkosten von zehn.' },
+      { t: 'Warnungsarten', b: 'Kontrast, unbekanntes Teil, ungenutztes Muster, fehlendes Pflicht-Token — vor dem Kompilieren geprüft.' }
+    ],
+    platStatus: { prog: 'Läuft', none: 'Nicht begonnen' },
+    road: { done: 'Erledigt', prog: 'Läuft', todo: 'Offen' },
+    roadItems: [
+      'Google-Dienste mit Google Drive implementieren, um Metadaten und Skins als Backup hochzuladen, falls ein Nutzer den Rechner zurücksetzen und die ganze Musik und Skins wiederherstellen muss.',
+      'ein keyless Import-System von Spotify implementieren',
+      'Skin Studio fertigstellen',
+      'ein System zur automatischen Metadatenverwaltung und -anreicherung implementieren',
+      'Layout und Grafik vollständig modular und in Skin Studio bearbeitbar machen. /Komponenten hinzufügen, entfernen und/oder neue erstellen',
+      'ein keyless Import-System von YT implementieren',
+      'einen digitalen Equalizer für die Bänder 0-2 kHz, 2.4, 4-6, 6-8, 8-10, 10-12, 12-14, 14-16, 16-18, 18-20 implementieren',
+      'eine grafische Aufwertung der Wiedergabe implementieren, mit der Wiedergabeleiste von SoundCloud',
+      'ein System zum automatischen, asynchronen Abrufen von Songtexten implementieren. es baut im Grunde eine neue Datenbank mit zur Musik synchronisierten Texten auf, weiterhin keyless',
+      'in Skin Studio ein System implementieren, das die Erstellung von Animationen für beliebige Orte und/oder Momente in der App erlaubt',
+      'Smart-Playlists implementieren',
+      'in den Einstellungen den OpenRouter-Schlüssel hinzufügen, um kostenlose KI-Modelle für empfohlene Playlists zu nutzen.',
+      'in Skin Studio einen Chat mit Tools und einem LLM verschiedener Anbieter (google, anthropic, grok, open ai, ollama, lm studio und openrouter) für die assistierte Skin-Erstellung implementieren.',
+      'grafische Bugs und/oder Inkonsistenzen für einen hochwertigeren Look beheben.'
+    ]
+  }
+};
+
+function detectLang() {
+  try {
+    const s = localStorage.getItem('aether-lang');
+    if (s && I18N[s]) return s;
+  } catch (e) {}
+  const n = ((navigator.languages && navigator.languages[0]) || navigator.language || 'en').slice(0, 2).toLowerCase();
+  return I18N[n] ? n : 'en';
+}
+
 class Component extends DCLogic {
+  state = { lang: detectLang() };
   renderVals() {
+    const L = I18N[this.state.lang] || I18N.en;
     const g = ['#3a2a6e,#8b7cf6', '#0d4a4f,#4fd6e0', '#5c2b18,#d97b3a', '#2a3a5e,#5b8ac9', '#3d2f4a,#8a6fb0', '#1d3a2a,#4f9e6a', '#4a2030,#c05070', '#22303c,#5f7d94', '#40331a,#b08a3c', '#2b2340,#6b5bb0'];
     const pair = i => ({ c1: g[i % g.length].split(',')[0], c2: g[i % g.length].split(',')[1] });
     const T = [['Weird Fishes / Arpeggi', 'Radiohead', 'In Rainbows', '5:18'], ['Nude', 'Radiohead', 'In Rainbows', '4:15'], ['Teardrop', 'Massive Attack', 'Mezzanine', '5:29'], ['Svefn-g-englar', 'Sigur Rós', 'Ágætis byrjun', '10:04'], ['An Ending (Ascent)', 'Brian Eno', 'Apollo', '4:24'], ['Untrue', 'Burial', 'Untrue', '6:19'], ['Windowlicker', 'Aphex Twin', 'Windowlicker', '6:07'], ['Sea Change', 'Beck', 'Sea Change', '4:41'], ['A Walk', 'Tycho', 'Dive', '5:37'], ['Alice', 'Tom Waits', 'Alice', '4:29'], ['Lift Your Skinny Fists', 'Godspeed', 'Lift Your…', '9:12']];
@@ -625,61 +951,33 @@ class Component extends DCLogic {
     return {
       rows: T.map((r, i) => Object.assign({ n: String(i + 1).padStart(2, '0'), t: r[0], a: r[1], al: r[2], d: r[3] }, pair(i))),
       bars: Array.from({ length: 28 }, (_, i) => ({ dur: (0.5 + (i % 7) * 0.13).toFixed(2) + 's', del: (i * 0.045).toFixed(2) + 's' })),
-      marquee: Array.from({ length: 2 }).flatMap(() => ['FLAC', 'ALAC', 'WAV', 'AIFF', 'MP3', 'OGG', 'OPUS', 'Gapless playback', 'ReplayGain', 'Cue sheets', 'Embedded art', 'Rust core', '5 000 tracks, no lag', 'No account', 'No telemetry'].map(t => ({ t }))),
-      pillars: [
-        { i: '#a-lock', t: 'Nothing leaves the machine', b: 'No account, no sync, no analytics. Aether opens files, reads their tags, and stops there — the network stack is never touched.' },
-        { i: '#a-bolt', t: 'Dense where it counts', b: '40px rows, air above the list and not between its lines. A library of five thousand tracks scrolls at frame rate, because it is meant to be scrolled.' },
-        { i: '#a-skin', t: 'The markup names its parts', b: 'Every surface the app paints carries a part name. That is what a skin binds to — not a class you guessed from devtools.' },
-        { i: '#a-code', t: 'Two doors per command', b: 'Right-click is never the only way in. Beside it there is always a visible control or an announced shortcut.' }
-      ],
-      chapters: [
-        { t: 'Library', b: 'Navigate on the left, look in the middle, listen on the right. The three columns never trade places.', pts: [{ t: '412 albums, 5 108 tracks, sorted locally' }, { t: 'Right column is the home of Now Playing' }, { t: 'Search from anywhere with /' }] },
-        { t: 'Now Playing', b: 'Not a second screen — the same part, grown. Cover art is the only coloured thing in the app, and it tints the room.', pts: [{ t: 'Opens from the art, the ⤢ button, or F' }, { t: 'Closes with Esc, the chevron, or the same door' }, { t: 'Disabled controls say why they are disabled' }] },
-        { t: 'Artists', b: 'Every number on this screen came off your own disk. Nothing is fetched, so nothing is wrong.', pts: [{ t: '287 artists, counted from tags' }, { t: 'No biography, no similar-artist grid' }, { t: 'Albums ordered by year, not by popularity' }] }
-      ],
+      marquee: Array.from({ length: 2 }).flatMap(() => L.marquee.map(t => ({ t }))),
+      pillars: ['#a-lock', '#a-bolt', '#a-skin', '#a-code'].map((i, k) => ({ i, t: L.pillars[k].t, b: L.pillars[k].b })),
+      chapters: L.chapters,
       covers: Array.from({ length: 10 }, (_, i) => Object.assign({ t: ['In Rainbows', 'Mezzanine', 'Untrue', 'Dive', 'Apollo', 'Kid A', 'Alice', 'Sea Change', 'Ágætis', 'Blue Lines', 'Selected Works', 'Vespertine', 'Bloom', 'Ambient 1', 'Moon Safari'][i], a: ['Radiohead', 'Massive Attack', 'Burial', 'Tycho', 'Eno', 'Radiohead', 'Tom Waits', 'Beck', 'Sigur Rós', 'Massive Attack', 'Aphex Twin', 'Björk', 'Beach House', 'Eno', 'Air'][i] }, pair(i + 2))),
       artists: Array.from({ length: 8 }, (_, i) => Object.assign({
         t: ['Radiohead', 'Massive Attack', 'Brian Eno', 'Burial', 'Sigur Rós', 'Aphex Twin', 'Tycho', 'Björk'][i],
-        al: [9, 5, 24, 3, 8, 13, 6, 10][i], tr: [118, 62, 291, 34, 76, 154, 71, 122][i] + ' tr',
+        al: [9, 5, 24, 3, 8, 13, 6, 10][i] + ' ' + L['ui.albumsLow'], tr: [118, 62, 291, 34, 76, 154, 71, 122][i] + ' tr',
         bg: i === 0 ? 'var(--ae-accSoft,rgba(139,124,246,.16))' : 'transparent', fw: i === 0 ? 600 : 400
       }, pair(i + 3))),
       small: Array.from({ length: 6 }, (_, i) => pair(i + 1)),
-      skins: Object.keys(SKINS).map(id => ({ id, name: SKINS[id].name, meta: SKINS[id].meta, sw1: SKINS[id].sw[0], sw2: SKINS[id].sw[1], sw3: SKINS[id].sw[2] })),
+      skins: Object.keys(SKINS).map(id => ({ id, name: SKINS[id].name, meta: L.skinMeta[id], sw1: SKINS[id].sw[0], sw2: SKINS[id].sw[1], sw3: SKINS[id].sw[2] })),
       tokens: TOKENS.map((k, i) => ({ k, v: TOKEN_VARS[i] })),
       budget: Array.from({ length: 10 }, (_, i) => ({ i })),
-      studioPoints: [
-        { n: 'Rule 01', t: 'You cannot write what the format refuses', b: 'Every control is the shape of a type in the crate. No free-text field where the document wants an enum — that is why a skin cannot break the app.' },
-        { n: 'Rule 02', t: 'The preview is the app, not a swatch', b: 'It is the real window with the skin applied. Screens you cannot reach by listening — modal, empty, loading — come from a picker.' },
-        { n: 'Rule 03', t: 'Cost is visible while you spend it', b: 'Each effect carries its weight next to its name and the surface counts to ten. You find out here, not on a phone dropping frames.' }
-      ],
-      stats: [
-        { n: 47, t: 'Tokens', b: 'Each with a description and a required flag, read straight from the registry.' },
-        { n: 48, t: 'Named parts', b: 'Every part declares its layers. Misspell one and the parser suggests the nearest.' },
-        { n: 11, t: 'Effects', b: 'Blur, glow, grain, noise — each with a declared render cost out of ten.' },
-        { n: 4, t: 'Warning kinds', b: 'Contrast, unknown part, unused pattern, missing required token — checked before compile.' }
-      ],
+      studioPoints: L.studioPoints.map((p, k) => ({ n: L.ruleWord + ' 0' + (k + 1), t: p.t, b: p.b })),
+      stats: [47, 48, 11, 4].map((n, k) => ({ n, t: L.stats[k].t, b: L.stats[k].b })),
       platforms: [
-        { n: 'Desktop · Windows', pct: 21, c: '#8b7cf6', s: 'In corso', d: '2 / 14' },
-        { n: 'Android', pct: 0, c: 'rgba(255,255,255,.30)', s: 'Non iniziato', d: '0 / —' },
-        { n: 'Linux', pct: 0, c: 'rgba(255,255,255,.30)', s: 'Non iniziato', d: '0 / —' },
-        { n: 'macOS', pct: 0, c: 'rgba(255,255,255,.30)', s: 'Non iniziato', d: '0 / —' }
+        { n: 'Desktop · Windows', pct: 21, c: '#8b7cf6', s: L.platStatus.prog, d: '2 / 14' },
+        { n: 'Android', pct: 0, c: 'var(--ae-t3,rgba(255,255,255,.46))', s: L.platStatus.none, d: '0 / —' },
+        { n: 'Linux', pct: 0, c: 'var(--ae-t3,rgba(255,255,255,.46))', s: L.platStatus.none, d: '0 / —' },
+        { n: 'macOS', pct: 0, c: 'var(--ae-t3,rgba(255,255,255,.46))', s: L.platStatus.none, d: '0 / —' }
       ],
-      winRoadmap: [
-        { s: 'Fatto', sc: '#4ade80', t: 'implementare servizi google con google drive per caricare metadati e skin per il backup casomai un utente dovesse ripristinare il computer e quindi recuperare tutta la musica e skin.' },
-        { s: 'Fatto', sc: '#4ade80', t: 'implementare un sistema di importazione da Spotify keyless' },
-        { s: 'In corso', sc: '#8b7cf6', t: 'finire skin studio' },
-        { s: 'In corso', sc: '#8b7cf6', t: 'implementare un sistema di gestione e arricchimento metadati automatico' },
-        { s: 'Da fare', sc: 'var(--ae-t3,rgba(255,255,255,.46))', t: 'rendere layout e grafica completamente modulare e modificabile su skin studio. /aggiungere togliere componenti e/o crearne di nuovi' },
-        { s: 'Da fare', sc: 'var(--ae-t3,rgba(255,255,255,.46))', t: 'implementare un sistema di importazione da YT keyless' },
-        { s: 'Da fare', sc: 'var(--ae-t3,rgba(255,255,255,.46))', t: 'implementare un equalizzatore digitale per le modifiche delle bande 0-2Khz, 2.4, 4-6, 6-8, 8-10, 10-12, 12-14, 14-16, 16-18, 18-20' },
-        { s: 'Da fare', sc: 'var(--ae-t3,rgba(255,255,255,.46))', t: 'implementare un graphic enhancement alla riproduzione prendendo la barra di riproduzione da soundcloud' },
-        { s: 'Da fare', sc: 'var(--ae-t3,rgba(255,255,255,.46))', t: 'implementare un sistema di auto get delle lyrics delle canzoni asincrone. sostanzialmente va a crearsi un nuovo database con le lirics sincronizzate con la musica, sempre keyless' },
-        { s: 'Da fare', sc: 'var(--ae-t3,rgba(255,255,255,.46))', t: 'implementare in skin studio un sistema che permetta la creazioni di animazioni da inserire in qualsivolgia posto e/o momento dell\'app' },
-        { s: 'Da fare', sc: 'var(--ae-t3,rgba(255,255,255,.46))', t: 'implementare playlist smart' },
-        { s: 'Da fare', sc: 'var(--ae-t3,rgba(255,255,255,.46))', t: 'aggiungere in impostazioni la chiave di openrouter per usare modelli di ia gratuiti per generare playlist consigliate.' },
-        { s: 'Da fare', sc: 'var(--ae-t3,rgba(255,255,255,.46))', t: 'implementare in skin studio una chat con tool con un LLM da vari provider (google, anthropic, grok, open ai, ollama, lm studio e openrouter) per la creazione assistita delle skin.' },
-        { s: 'Da fare', sc: 'var(--ae-t3,rgba(255,255,255,.46))', t: 'fixare bug grafici e/o incoerenze per un look più premium.' }
-      ].map((r, i) => Object.assign({ n: String(i + 1).padStart(2, '0') }, r)),
+      winRoadmap: ['done', 'done', 'prog', 'prog', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo'].map((k, i) => ({
+        n: String(i + 1).padStart(2, '0'),
+        s: L.road[k],
+        sc: k === 'done' ? '#4ade80' : k === 'prog' ? 'var(--ae-acc,#8b7cf6)' : 'var(--ae-t3,rgba(255,255,255,.46))',
+        t: L.roadItems[i]
+      })),
       setRoot: el => { this.root = el; }
     };
   }
@@ -695,45 +993,14 @@ class Component extends DCLogic {
     if (cg) cg.style.opacity = String(0.5 * amb);
 
     const motion = this.props.motion !== false && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    this._fine = fine;
     this._motion = motion;
     this._aurora = root.querySelector('[data-aurora]');
     this._logo = root.querySelector('[data-logo]');
     if (this._aurora) this._aurora.style.opacity = String(0.28 * amb);
 
-    // kinetic word-split headline
-    const splits = Array.from(root.querySelectorAll('[data-split]'));
-    splits.forEach(el => {
-      const base = Number(el.getAttribute('data-d')) || 0;
-      const words = (el.textContent || '').trim().split(/\s+/);
-      el.textContent = '';
-      el.style.perspective = '900px';
-      words.forEach((w, i) => {
-        const mask = document.createElement('span');
-        mask.style.display = 'inline-block';
-        mask.style.overflow = 'hidden';
-        mask.style.verticalAlign = 'bottom';
-        mask.style.padding = '0 0 .08em';
-        const inner = document.createElement('span');
-        inner.textContent = w;
-        inner.setAttribute('data-word', '');
-        inner.style.display = 'inline-block';
-        inner.style.willChange = 'transform';
-        if (motion) {
-          inner.style.transform = 'translateY(108%) rotateX(-62deg) scale(1.12)';
-          inner.style.opacity = '0';
-          inner.style.filter = 'blur(12px)';
-          const d = base + i * 95;
-          inner.style.transition = 'transform 1.15s cubic-bezier(.16,1,.3,1) ' + d + 'ms, opacity .8s ease ' + d + 'ms, filter .9s ease ' + d + 'ms';
-        }
-        mask.appendChild(inner);
-        el.appendChild(mask);
-        if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
-      });
-    });
-    const fireSplit = el => el.querySelectorAll('[data-word]').forEach(w => {
-      w.style.transform = 'none'; w.style.opacity = '1'; w.style.filter = 'none';
-    });
-    if (motion) { requestAnimationFrame(() => requestAnimationFrame(() => splits.forEach(fireSplit))); }
+    this.applyLang(this.state.lang, motion);
 
     // reveals
     const rvs = Array.from(root.querySelectorAll('[data-rv]'));
@@ -796,7 +1063,7 @@ class Component extends DCLogic {
     root.querySelectorAll('[data-tilt]').forEach(c => {
       c.style.transition = (c.style.transition || '') + ',transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s ease';
       c.addEventListener('mousemove', ev => {
-        if (!motion) return;
+        if (!motion || !fine) return;
         const b = c.getBoundingClientRect();
         const px = (ev.clientX - b.left) / b.width, py = (ev.clientY - b.top) / b.height;
         const rx = (py - 0.5) * -11, ry = (px - 0.5) * 11;
@@ -815,7 +1082,7 @@ class Component extends DCLogic {
     root.querySelectorAll('[data-magnet]').forEach(m => {
       m.style.willChange = 'transform';
       m.addEventListener('mousemove', ev => {
-        if (!motion) return;
+        if (!motion || !fine) return;
         const b = m.getBoundingClientRect();
         const dx = (ev.clientX - b.left - b.width / 2) / b.width;
         const dy = (ev.clientY - b.top - b.height / 2) / b.height;
@@ -828,7 +1095,7 @@ class Component extends DCLogic {
         m.style.transform = 'none'; m.style.boxShadow = 'none';
       });
     });
-    root.querySelectorAll('[data-road]').forEach(r => {
+    if (fine) root.querySelectorAll('[data-road]').forEach(r => {
       r.addEventListener('mouseenter', () => { r.style.background = 'var(--ae-surf,#0e0e14)'; r.style.paddingLeft = '18px'; });
       r.addEventListener('mouseleave', () => { r.style.background = 'transparent'; r.style.paddingLeft = '6px'; });
     });
@@ -843,6 +1110,47 @@ class Component extends DCLogic {
       this.applySkin(b.getAttribute('data-skin'));
     });
 
+    // language picker
+    root.addEventListener('click', ev => {
+      const b = ev.target.closest('[data-lang]');
+      if (!b) return;
+      const lg = b.getAttribute('data-lang');
+      if (this._setMenu) this._setMenu(false);
+      if (lg === this.state.lang) return;
+      this.setState({ lang: lg }, () => this.applyLang(lg, false));
+    });
+
+    // mobile menu
+    const burger = root.querySelector('[data-burger]');
+    const menu = root.querySelector('[data-mobmenu]');
+    if (burger && menu) {
+      const bars = Array.from(burger.querySelectorAll('[data-bar]'));
+      this._menuOpen = false;
+      const setMenu = on => {
+        if (on === this._menuOpen) return;
+        this._menuOpen = on;
+        if (on) {
+          menu.style.display = 'flex';
+          requestAnimationFrame(() => { menu.style.opacity = '1'; });
+          document.body.style.overflow = 'hidden';
+        } else {
+          menu.style.opacity = '0';
+          setTimeout(() => { if (!this._menuOpen) menu.style.display = 'none'; }, 360);
+          document.body.style.overflow = '';
+        }
+        if (bars.length === 3) {
+          bars[0].style.transform = on ? 'translateY(6.1px) rotate(45deg)' : 'none';
+          bars[1].style.opacity = on ? '0' : '1';
+          bars[2].style.transform = on ? 'translateY(-6.1px) rotate(-45deg)' : 'none';
+        }
+      };
+      this._setMenu = setMenu;
+      burger.addEventListener('click', () => setMenu(!this._menuOpen));
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+      this._onKey = e => { if (e.key === 'Escape') setMenu(false); };
+      window.addEventListener('keydown', this._onKey);
+    }
+
     // waitlist
     const form = root.querySelector('[data-form]');
     if (form) form.addEventListener('submit', ev => {
@@ -852,10 +1160,13 @@ class Component extends DCLogic {
       const note = root.querySelector('[data-formnote]');
       if (!input.value || input.value.indexOf('@') < 0) { input.style.borderColor = '#f87171'; return; }
       input.style.borderColor = 'var(--ae-line,rgba(255,255,255,.14))';
-      btn.textContent = 'You are in';
+      const L = I18N[this.state.lang] || I18N.en;
+      btn.textContent = L['access.done'];
+      btn.removeAttribute('data-i18n');
       btn.style.background = '#4ade80';
       input.disabled = true;
-      note.textContent = 'Wave 1 opens next. We will write once, from a real address.';
+      note.textContent = L['access.donenote'];
+      note.removeAttribute('data-i18n');
     });
 
     // scroll
@@ -907,15 +1218,16 @@ class Component extends DCLogic {
         const on = y > 40;
         nav.style.background = on ? 'var(--ae-navBg,rgba(9,9,13,.72))' : 'transparent';
         nav.style.borderBottomColor = on ? 'var(--ae-line,rgba(255,255,255,.08))' : 'transparent';
-        nav.style.padding = on ? '10px 34px' : '14px 34px';
+        nav.style.padding = on ? '9px clamp(14px,4vw,34px)' : '12px clamp(14px,4vw,34px)';
       }
-      const mob = root.clientWidth < 780;
-      if (mob !== this._mob) { this._mob = mob; this.layout(mob); }
+      const cw = root.clientWidth;
+      const mob = cw < 800, nrw = cw < 1000;
+      if (mob !== this._mob || nrw !== this._nrw) { this._mob = mob; this._nrw = nrw; this.layout(mob, nrw); }
       if (heroStage && heroFixed && tilt) {
         const sw = heroStage.clientWidth;
         // mobile crops the left rail and scales a 1024px window; desktop fits all 1240px
         const design = mob ? 1024 : 1240;
-        const ratio = Math.min(1, (sw - 18) / design);
+        const ratio = mob ? Math.max(0.54, Math.min(1, (sw - 18) / design)) : Math.min(1, (sw - 18) / design);
         const offset = mob ? -216 * ratio + 9 : (sw - 1240 * ratio) / 2;
         heroFixed.style.transform = 'translateX(' + offset + 'px) scale(' + ratio + ')';
         tilt.style.height = Math.round(662 * ratio) + 'px';
@@ -974,23 +1286,28 @@ class Component extends DCLogic {
     }
   }
 
-  layout(mob) {
+  layout(mob, nrw) {
     const root = this.root;
     if (!root) return;
-    const nl = root.querySelector('[data-navlinks]');
-    if (nl) { nl.style.gap = mob ? '10px' : '22px'; Array.from(nl.children).forEach((a, i) => { if (i < 4) a.style.display = mob ? 'none' : 'block'; }); }
+    const set = (sel, v) => { const el = root.querySelector(sel); if (el) el.style.display = v; };
+    set('[data-navlinks]', nrw ? 'none' : 'flex');
+    set('[data-navbadge]', nrw ? 'none' : 'inline-block');
+    set('[data-navcta]', nrw ? 'none' : 'flex');
+    set('[data-nav] [data-langsel]', nrw ? 'none' : 'flex');
+    set('[data-burger]', nrw ? 'flex' : 'none');
+    if (!nrw && this._setMenu) this._setMenu(false);
     root.querySelectorAll('[data-stack]').forEach(el => {
       el.style.gridTemplateColumns = mob ? '1fr' : el.getAttribute('data-cols');
     });
     const stage = root.querySelector('[data-tour-stage]');
-    if (stage) stage.style.height = mob ? '56vh' : 'min(62vh,600px)';
+    if (stage) stage.style.height = mob ? '46vh' : 'min(62vh,600px)';
     const ch = root.querySelector('[data-chapters]');
-    if (ch) ch.style.minHeight = mob ? '210px' : '250px';
-    const f = root.querySelector('[data-formrow]');
-    if (f) f.style.flexDirection = mob ? 'column' : 'row';
+    if (ch) ch.style.minHeight = mob ? '196px' : '250px';
+    const f2 = root.querySelector('[data-formrow]');
+    if (f2) f2.style.flexDirection = mob ? 'column' : 'row';
     root.querySelectorAll('[data-par]').forEach(el => { el.style.display = mob ? 'none' : 'block'; });
-    const cg = root.querySelector('[data-cursor-glow]');
-    if (cg) cg.style.display = mob ? 'none' : 'block';
+    set('[data-cursor-glow]', this._fine && !mob ? 'block' : 'none');
+    set('[data-aurora]', mob ? 'none' : 'block');
   }
 
   ripple(x, y, id) {
@@ -1012,10 +1329,66 @@ class Component extends DCLogic {
     if (this._io) this._io.disconnect();
     if (this._cio) this._cio.disconnect();
     if (this._safety) clearTimeout(this._safety);
+    if (this._onKey) window.removeEventListener('keydown', this._onKey);
+    document.body.style.overflow = '';
   }
 
-  componentDidUpdate(prev) {
+  componentDidUpdate(prev, prevState) {
     if (prev.skin !== this.props.skin) this.applySkin(this.props.skin || 'midnight');
+    if (prevState && prevState.lang !== this.state.lang) this.applyLang(this.state.lang, false);
+  }
+
+  buildSplit(el, animate) {
+    const base = Number(el.getAttribute('data-d')) || 0;
+    const words = (el.getAttribute('data-text') || el.textContent || '').trim().split(/\s+/);
+    el.textContent = '';
+    el.style.perspective = '900px';
+    words.forEach((w, i) => {
+      const mask = document.createElement('span');
+      mask.style.display = 'inline-block';
+      mask.style.overflow = 'hidden';
+      mask.style.verticalAlign = 'bottom';
+      mask.style.padding = '0 0 .08em';
+      const inner = document.createElement('span');
+      inner.textContent = w;
+      inner.setAttribute('data-word', '');
+      inner.style.display = 'inline-block';
+      if (animate) {
+        inner.style.willChange = 'transform';
+        inner.style.transform = 'translateY(108%) rotateX(-62deg) scale(1.12)';
+        inner.style.opacity = '0';
+        inner.style.filter = 'blur(12px)';
+        const d = base + i * 95;
+        inner.style.transition = 'transform 1.15s cubic-bezier(.16,1,.3,1) ' + d + 'ms, opacity .8s ease ' + d + 'ms, filter .9s ease ' + d + 'ms';
+      }
+      mask.appendChild(inner);
+      el.appendChild(mask);
+      if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
+    });
+    if (animate) requestAnimationFrame(() => requestAnimationFrame(() => {
+      el.querySelectorAll('[data-word]').forEach(x => { x.style.transform = 'none'; x.style.opacity = '1'; x.style.filter = 'none'; });
+    }));
+  }
+
+  applyLang(lang, animateSplit) {
+    const L = I18N[lang] || I18N.en;
+    const root = this.root;
+    if (!root) return;
+    document.documentElement.lang = lang;
+    root.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = L[el.getAttribute('data-i18n')];
+      if (v == null) return;
+      if (el.hasAttribute('data-split')) { el.setAttribute('data-text', v); this.buildSplit(el, !!animateSplit); }
+      else el.textContent = v;
+    });
+    const em = root.querySelector('[data-email]');
+    if (em && !em.disabled) em.placeholder = L['access.ph'];
+    root.querySelectorAll('[data-lang]').forEach(b => {
+      const on = b.getAttribute('data-lang') === lang;
+      b.style.background = on ? 'var(--ae-acc,#8b7cf6)' : 'transparent';
+      b.style.color = on ? 'var(--ae-ink,#09090d)' : 'var(--ae-t2,rgba(255,255,255,.62))';
+    });
+    try { localStorage.setItem('aether-lang', lang); } catch (e) {}
   }
 
   applySkin(id) {
