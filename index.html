@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -11,11 +12,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<title>Aether — A local music player with a skin engine</title>
+<meta name="description" content="Aether plays the files you already own — no account, no stream, no telemetry. A validated skin engine restyles the whole app from a data file. Early access opens in waves.">
+<meta name="theme-color" content="#09090d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309090d'/%3E%3Cpath d='M32 8a24 24 0 0 1 0 48' fill='none' stroke='%238b7cf6' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M32 56a24 24 0 0 1 0-48' fill='none' stroke='%234fd6e0' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
 html{scroll-behavior:smooth}
 body{margin:0;background:#09090d;font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
-::selection{background:rgba(139,124,246,.32)}
+a{color:var(--ae-acc,#8b7cf6);text-decoration:none}a:hover{filter:brightness(1.18)}
+::selection{background:color-mix(in srgb,var(--ae-acc,#8b7cf6) 32%,transparent)}
 @keyframes ae-drift{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(4%,-3%,0) scale(1.12)}100%{transform:translate3d(0,0,0) scale(1)}}
 @keyframes ae-drift2{0%{transform:translate3d(0,0,0) scale(1.05)}50%{transform:translate3d(-5%,4%,0) scale(.95)}100%{transform:translate3d(0,0,0) scale(1.05)}}
 @keyframes ae-float{0%{transform:translateY(0)}50%{transform:translateY(-14px)}100%{transform:translateY(0)}}
@@ -27,6 +32,17 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
 @keyframes ae-prog{0%{width:14%}100%{width:86%}}
 @keyframes ae-aurora{to{transform:rotate(360deg)}}
 @keyframes ae-pulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:.7;transform:scale(1.06)}}
+[id]{scroll-margin-top:94px}
+*{-webkit-tap-highlight-color:transparent}
+a,button,input{touch-action:manipulation}
+:focus-visible{outline:2px solid var(--ae-acc,#8b7cf6);outline-offset:2px}
+html{scrollbar-color:var(--ae-raise,#1e1e2a) var(--ae-bg,#09090d);scrollbar-width:thin}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--ae-raise,#1e1e2a);border-radius:99px;border:3px solid var(--ae-bg,#09090d)}
+::-webkit-scrollbar-thumb:hover{background:var(--ae-acc,#8b7cf6)}
+[data-marq]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </helmet>
 
@@ -68,7 +84,7 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
   <div data-cursor-glow style="position:absolute;top:0;left:0;width:640px;height:640px;margin:-320px 0 0 -320px;border-radius:50%;background:radial-gradient(circle,var(--ae-glowA,rgba(139,124,246,.30)),transparent 60%);filter:blur(30px);opacity:.5;transition:opacity .5s ease;will-change:transform"></div>
 </div>
 
-<nav data-nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:12px;padding:12px clamp(14px,4vw,34px);backdrop-filter:blur(18px);background:transparent;border-bottom:1px solid transparent;transition:background-color .4s ease,border-color .4s ease,padding .4s ease">
+<nav data-nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:12px;padding:12px clamp(14px,4vw,34px);padding-top:calc(12px + env(safe-area-inset-top,0px));backdrop-filter:blur(18px);background:transparent;border-bottom:1px solid transparent;transition:background-color .4s ease,border-color .4s ease,padding .4s ease">
   <a href="#top" style="display:flex;align-items:center;gap:9px;color:var(--ae-t1,rgba(255,255,255,.94))">
     <svg data-logo width="20" height="20" style="color:var(--ae-acc,#8b7cf6);transition:transform .4s cubic-bezier(.2,.8,.2,1)"><use href="#a-mark"></use></svg>
     <span style="font:600 15px/1 Geist,sans-serif;letter-spacing:-.01em">Aether</span>
@@ -92,7 +108,7 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
   </button>
 </nav>
 
-<div data-mobmenu style="position:fixed;inset:0;z-index:48;display:none;flex-direction:column;justify-content:center;gap:2px;padding:92px 26px 40px;background:var(--ae-bg,#09090d);opacity:0;transition:opacity .35s ease">
+<div data-mobmenu style="position:fixed;inset:0;z-index:48;display:none;flex-direction:column;justify-content:center;gap:2px;padding:92px 26px 40px;padding-top:calc(92px + env(safe-area-inset-top,0px));padding-bottom:calc(40px + env(safe-area-inset-bottom,0px));background:var(--ae-bg,#09090d);opacity:0;transition:opacity .35s ease">
   <a href="#tour" data-i18n="nav.app" style="display:flex;align-items:center;min-height:54px;font:600 28px/1.1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em;color:var(--ae-t1,rgba(255,255,255,.94))">The app</a>
   <a href="#studio" data-i18n="nav.studio" style="display:flex;align-items:center;min-height:54px;font:600 28px/1.1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em;color:var(--ae-t1,rgba(255,255,255,.94))">Skin Studio</a>
   <a href="#format" data-i18n="nav.format" style="display:flex;align-items:center;min-height:54px;font:600 28px/1.1 'Bricolage Grotesque',Geist,sans-serif;letter-spacing:-.03em;color:var(--ae-t1,rgba(255,255,255,.94))">Format</a>
@@ -234,7 +250,7 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
 </section>
 
 <section style="position:relative;z-index:1;margin-top:96px;padding:16px 0;border-top:1px solid var(--ae-line,rgba(255,255,255,.08));border-bottom:1px solid var(--ae-line,rgba(255,255,255,.08));overflow:hidden;transition:border-color .7s ease">
-  <div style="display:flex;width:max-content;animation:ae-marq 34s linear infinite">
+  <div data-marq style="display:flex;width:max-content;animation:ae-marq 34s linear infinite">
     <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="20">
       <span style="display:flex;align-items:center;gap:26px;padding-right:26px;font:500 13px/1 'Geist Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--ae-t3,rgba(255,255,255,.46));white-space:nowrap">{{ m.t }}<span style="width:4px;height:4px;border-radius:50%;background:var(--ae-acc,#8b7cf6)"></span></span>
     </sc-for>
@@ -563,7 +579,7 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
   </div>
 </section>
 
-<footer style="position:relative;z-index:1;padding:30px clamp(16px,4vw,34px) 44px;border-top:1px solid var(--ae-line,rgba(255,255,255,.08));transition:border-color .7s ease">
+<footer style="position:relative;z-index:1;padding:30px clamp(16px,4vw,34px) 44px;padding-bottom:calc(44px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--ae-line,rgba(255,255,255,.08));transition:border-color .7s ease">
   <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center">
     <div style="display:flex;align-items:center;gap:9px"><svg width="17" height="17" style="color:var(--ae-acc,#8b7cf6)"><use href="#a-mark"></use></svg><span style="font:600 13px/1 Geist,sans-serif">Aether</span></div>
     <span style="font:10.5px 'Geist Mono',monospace;color:var(--ae-t3,rgba(255,255,255,.46))" data-i18n="footer.tag">Local-first music player · Early access</span>
@@ -576,6 +592,10 @@ a{color:#8b7cf6;text-decoration:none}a:hover{color:#a99bff}
       <a href="https://github.com/FedericoBaratti/Aether" target="_blank" rel="noopener" style="color:var(--ae-t2,rgba(255,255,255,.62))">GitHub</a>
       <a href="https://github.com/FedericoBaratti/Aether/releases" target="_blank" rel="noopener" style="color:var(--ae-t2,rgba(255,255,255,.62))">Releases</a>
     </div>
+  </div>
+  <div data-rv data-d="80" style="width:100%;margin-top:24px;display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;text-align:center">
+    <span style="width:5px;height:5px;border-radius:50%;background:var(--ae-acc,#8b7cf6);opacity:.75"></span>
+    <span style="font:500 10.5px/1.6 'Geist Mono',monospace;letter-spacing:.04em;color:var(--ae-t3,rgba(255,255,255,.46))"><span data-i18n="footer.updated">Last updated</span>&nbsp;·&nbsp;<span data-updated>—</span></span>
   </div>
 </footer>
 
@@ -659,13 +679,13 @@ const I18N = {
     's4.eyebrow': '04 — The contract', 's4.h2': "A skin cannot break the app. That's a property of the format, not a promise.",
     's5.eyebrow': '05 — Roadmap', 's5.h2': "What isn't there yet, and why.",
     's5.p': "Nine of the 48 registered parts don't render today. They stay in the registry so that skins written now still fit the app later.",
-    'win.h3': 'Windows — implementation order', 'win.meta': '14 items · 2 done · 2 in progress · 21%',
+    'win.h3': 'Windows — implementation order', 'win.meta': '14 items · 8 done · 1 in progress · 64%',
     'access.h2': 'Early access opens in waves. Get in the first one.',
     'access.p': "Builds for macOS, Windows and Linux, plus the skin format spec and the studio while it's still rough enough to argue with. Everything ships from github.com/FedericoBaratti/Aether.",
     'access.ph': 'you@domain.com', 'access.btn': 'Join the list', 'access.note': 'One email when your wave opens. Nothing else, ever.',
     'access.done': 'You are in', 'access.donenote': 'Wave 1 opens next. We will write once, from a real address.',
     'access.spec': 'Read the skin spec',
-    'footer.tag': 'Local-first music player · Early access',
+    'footer.tag': 'Local-first music player · Early access', 'footer.updated': 'Last updated',
     marquee: ['FLAC', 'ALAC', 'WAV', 'AIFF', 'MP3', 'OGG', 'OPUS', 'Gapless playback', 'ReplayGain', 'Cue sheets', 'Embedded art', 'Rust core', '5 000 tracks, no lag', 'No account', 'No telemetry'],
     pillars: [
       { t: 'Nothing leaves the machine', b: 'No account, no sync, no analytics. Aether opens files, reads their tags, and stops there — the network stack is never touched.' },
@@ -732,13 +752,13 @@ const I18N = {
     's4.eyebrow': '04 — Il contratto', 's4.h2': "Una skin non può rompere l'app. È una proprietà del formato, non una promessa.",
     's5.eyebrow': '05 — Roadmap', 's5.h2': "Cosa non c'è ancora, e perché.",
     's5.p': "Nove delle 48 parti registrate oggi non vengono disegnate. Restano nel registro perché le skin scritte adesso continuino a calzare l'app domani.",
-    'win.h3': 'Windows — ordine di implementazione', 'win.meta': '14 voci · 2 chiuse · 2 in corso · 21%',
+    'win.h3': 'Windows — ordine di implementazione', 'win.meta': '14 voci · 8 chiuse · 1 in corso · 64%',
     'access.h2': "L'accesso anticipato apre a ondate. Entra nella prima.",
     'access.p': 'Build per macOS, Windows e Linux, più le specifiche del formato skin e lo studio finché è ancora abbastanza grezzo da poterci discutere. Tutto parte da github.com/FedericoBaratti/Aether.',
     'access.ph': 'tu@dominio.com', 'access.btn': 'Iscrivimi', 'access.note': "Una email quando si apre la tua ondata. Nient'altro, mai.",
     'access.done': 'Ci sei', 'access.donenote': 'La prima ondata è la prossima. Scriveremo una volta sola, da un indirizzo vero.',
     'access.spec': 'Leggi le specifiche skin',
-    'footer.tag': 'Lettore musicale local-first · Accesso anticipato',
+    'footer.tag': 'Lettore musicale local-first · Accesso anticipato', 'footer.updated': 'Ultimo aggiornamento',
     marquee: ['FLAC', 'ALAC', 'WAV', 'AIFF', 'MP3', 'OGG', 'OPUS', 'Riproduzione gapless', 'ReplayGain', 'Cue sheet', 'Copertine incorporate', 'Core in Rust', '5 000 brani, zero lag', 'Nessun account', 'Nessuna telemetria'],
     pillars: [
       { t: 'Niente lascia il computer', b: 'Nessun account, nessuna sincronizzazione, nessuna analitica. Aether apre i file, legge i tag e si ferma lì — lo stack di rete non viene mai toccato.' },
@@ -805,13 +825,13 @@ const I18N = {
     's4.eyebrow': '04 — Le contrat', 's4.h2': "Une skin ne peut pas casser l'app. C'est une propriété du format, pas une promesse.",
     's5.eyebrow': '05 — Feuille de route', 's5.h2': "Ce qui n'est pas encore là, et pourquoi.",
     's5.p': "Neuf des 48 parties enregistrées ne s'affichent pas aujourd'hui. Elles restent dans le registre pour que les skins écrites maintenant conviennent encore à l'app plus tard.",
-    'win.h3': "Windows — ordre d'implémentation", 'win.meta': '14 entrées · 2 terminées · 2 en cours · 21 %',
+    'win.h3': "Windows — ordre d'implémentation", 'win.meta': '14 entrées · 8 terminées · 1 en cours · 64 %',
     'access.h2': "L'accès anticipé s'ouvre par vagues. Entrez dans la première.",
     'access.p': "Des builds pour macOS, Windows et Linux, plus la spécification du format de skin et le studio tant qu'il est encore assez brut pour qu'on en débatte. Tout part de github.com/FedericoBaratti/Aether.",
     'access.ph': 'vous@domaine.com', 'access.btn': 'Rejoindre la liste', 'access.note': "Un e-mail quand votre vague s'ouvre. Rien d'autre, jamais.",
     'access.done': 'Vous y êtes', 'access.donenote': "La vague 1 est la prochaine. Nous écrirons une seule fois, depuis une vraie adresse.",
     'access.spec': 'Lire la spec des skins',
-    'footer.tag': 'Lecteur de musique local-first · Accès anticipé',
+    'footer.tag': 'Lecteur de musique local-first · Accès anticipé', 'footer.updated': 'Dernière mise à jour',
     marquee: ['FLAC', 'ALAC', 'WAV', 'AIFF', 'MP3', 'OGG', 'OPUS', 'Lecture sans blanc', 'ReplayGain', 'Feuilles cue', 'Pochettes intégrées', 'Cœur en Rust', '5 000 titres, sans lag', 'Pas de compte', 'Pas de télémétrie'],
     pillars: [
       { t: 'Rien ne quitte la machine', b: "Pas de compte, pas de synchronisation, pas d'analytique. Aether ouvre les fichiers, lit leurs tags et s'arrête là — la pile réseau n'est jamais touchée." },
@@ -878,13 +898,13 @@ const I18N = {
     's4.eyebrow': '04 — Der Vertrag', 's4.h2': 'Eine Skin kann die App nicht kaputt machen. Das ist eine Eigenschaft des Formats, kein Versprechen.',
     's5.eyebrow': '05 — Roadmap', 's5.h2': 'Was noch fehlt, und warum.',
     's5.p': 'Neun der 48 registrierten Teile werden heute nicht gerendert. Sie bleiben im Register, damit heute geschriebene Skins später noch zur App passen.',
-    'win.h3': 'Windows — Implementierungsreihenfolge', 'win.meta': '14 Einträge · 2 erledigt · 2 laufend · 21 %',
+    'win.h3': 'Windows — Implementierungsreihenfolge', 'win.meta': '14 Einträge · 8 erledigt · 1 laufend · 64 %',
     'access.h2': 'Early Access öffnet in Wellen. Sei in der ersten dabei.',
     'access.p': 'Builds für macOS, Windows und Linux, dazu die Spezifikation des Skin-Formats und das Studio, solange es noch roh genug ist, um darüber zu streiten. Alles kommt von github.com/FedericoBaratti/Aether.',
     'access.ph': 'du@domain.com', 'access.btn': 'Eintragen', 'access.note': 'Eine E-Mail, wenn deine Welle öffnet. Sonst nie etwas.',
     'access.done': 'Du bist dabei', 'access.donenote': 'Welle 1 öffnet als Nächstes. Wir schreiben einmal, von einer echten Adresse.',
     'access.spec': 'Skin-Spezifikation lesen',
-    'footer.tag': 'Local-First-Musikplayer · Early Access',
+    'footer.tag': 'Local-First-Musikplayer · Early Access', 'footer.updated': 'Zuletzt aktualisiert',
     marquee: ['FLAC', 'ALAC', 'WAV', 'AIFF', 'MP3', 'OGG', 'OPUS', 'Lückenlose Wiedergabe', 'ReplayGain', 'Cue-Sheets', 'Eingebettete Cover', 'Rust-Core', '5 000 Titel, kein Lag', 'Kein Konto', 'Keine Telemetrie'],
     pillars: [
       { t: 'Nichts verlässt den Rechner', b: 'Kein Konto, keine Synchronisierung, keine Analyse. Aether öffnet Dateien, liest ihre Tags und hört dort auf — der Netzwerk-Stack wird nie angefasst.' },
@@ -967,12 +987,12 @@ class Component extends DCLogic {
       studioPoints: L.studioPoints.map((p, k) => ({ n: L.ruleWord + ' 0' + (k + 1), t: p.t, b: p.b })),
       stats: [47, 48, 11, 4].map((n, k) => ({ n, t: L.stats[k].t, b: L.stats[k].b })),
       platforms: [
-        { n: 'Desktop · Windows', pct: 21, c: '#8b7cf6', s: L.platStatus.prog, d: '2 / 14' },
+        { n: 'Desktop · Windows', pct: 64, c: '#8b7cf6', s: L.platStatus.prog, d: '8 / 14' },
         { n: 'Android', pct: 0, c: 'var(--ae-t3,rgba(255,255,255,.46))', s: L.platStatus.none, d: '0 / —' },
         { n: 'Linux', pct: 0, c: 'var(--ae-t3,rgba(255,255,255,.46))', s: L.platStatus.none, d: '0 / —' },
         { n: 'macOS', pct: 0, c: 'var(--ae-t3,rgba(255,255,255,.46))', s: L.platStatus.none, d: '0 / —' }
       ],
-      winRoadmap: ['done', 'done', 'prog', 'prog', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo'].map((k, i) => ({
+      winRoadmap: ['done', 'done', 'prog', 'done', 'todo', 'done', 'done', 'done', 'todo', 'todo', 'done', 'todo', 'todo', 'done'].map((k, i) => ({
         n: String(i + 1).padStart(2, '0'),
         s: L.road[k],
         sc: k === 'done' ? '#4ade80' : k === 'prog' ? 'var(--ae-acc,#8b7cf6)' : 'var(--ae-t3,rgba(255,255,255,.46))',
@@ -1000,7 +1020,34 @@ class Component extends DCLogic {
     this._logo = root.querySelector('[data-logo]');
     if (this._aurora) this._aurora.style.opacity = String(0.28 * amb);
 
+    this._modified = (() => {
+      const m = String(document.lastModified || '').match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+      if (m) return new Date(+m[3], +m[1] - 1, +m[2]);
+      const n = new Date();
+      return Number.isNaN(n.getTime()) ? null : n;
+    })();
+
     this.applyLang(this.state.lang, motion);
+
+    const ts = root.querySelector('[data-tour-sticky]');
+    if (ts) this.setSvh(ts, '100vh', '100svh');
+    const mm = root.querySelector('[data-mobmenu]');
+    if (mm) {
+      mm.style.paddingTop = 'calc(92px + env(safe-area-inset-top,0px))';
+      mm.style.paddingBottom = 'calc(40px + env(safe-area-inset-bottom,0px))';
+    }
+    const email = root.querySelector('[data-email]');
+    if (email) {
+      email.addEventListener('focus', () => { email.style.borderColor = 'var(--ae-acc,#8b7cf6)'; });
+      email.addEventListener('blur', () => { email.style.borderColor = 'var(--ae-line,rgba(255,255,255,.14))'; });
+    }
+    const marq = root.querySelector('[data-marq]');
+    if (marq) {
+      marq.addEventListener('mouseenter', () => { marq.style.animationPlayState = motion ? 'paused' : 'running'; });
+      marq.addEventListener('mouseleave', () => { marq.style.animationPlayState = 'running'; });
+    }
+    this._onResizeDeb = () => { if (this._rt) clearTimeout(this._rt); this._rt = setTimeout(() => this.fitChapters(), 120); };
+    window.addEventListener('resize', this._onResizeDeb);
 
     // reveals
     const rvs = Array.from(root.querySelectorAll('[data-rv]'));
@@ -1219,6 +1266,7 @@ class Component extends DCLogic {
         nav.style.background = on ? 'var(--ae-navBg,rgba(9,9,13,.72))' : 'transparent';
         nav.style.borderBottomColor = on ? 'var(--ae-line,rgba(255,255,255,.08))' : 'transparent';
         nav.style.padding = on ? '9px clamp(14px,4vw,34px)' : '12px clamp(14px,4vw,34px)';
+        nav.style.paddingTop = 'calc(' + (on ? 9 : 12) + 'px + env(safe-area-inset-top,0px))';
       }
       const cw = root.clientWidth;
       const mob = cw < 800, nrw = cw < 1000;
@@ -1300,14 +1348,38 @@ class Component extends DCLogic {
       el.style.gridTemplateColumns = mob ? '1fr' : el.getAttribute('data-cols');
     });
     const stage = root.querySelector('[data-tour-stage]');
-    if (stage) stage.style.height = mob ? '46vh' : 'min(62vh,600px)';
-    const ch = root.querySelector('[data-chapters]');
-    if (ch) ch.style.minHeight = mob ? '196px' : '250px';
+    if (stage) { if (mob) this.setSvh(stage, '46vh', '46svh'); else stage.style.height = 'min(62vh,600px)'; }
+    this.fitChapters();
     const f2 = root.querySelector('[data-formrow]');
     if (f2) f2.style.flexDirection = mob ? 'column' : 'row';
     root.querySelectorAll('[data-par]').forEach(el => { el.style.display = mob ? 'none' : 'block'; });
     set('[data-cursor-glow]', this._fine && !mob ? 'block' : 'none');
     set('[data-aurora]', mob ? 'none' : 'block');
+  }
+
+  setSvh(el, vh, svh) {
+    el.style.height = vh;
+    try { if (window.CSS && CSS.supports('height', svh)) el.style.height = svh; } catch (e) {}
+  }
+
+  fitChapters() {
+    const root = this.root;
+    if (!root) return;
+    const ch = root.querySelector('[data-chapters]');
+    if (!ch) return;
+    if ((root.clientWidth || 0) >= 800) { ch.style.minHeight = '250px'; return; }
+    let h = 0;
+    ch.querySelectorAll('[data-chapter]').forEach(c => {
+      c.style.top = 'auto'; c.style.bottom = 'auto';
+      h = Math.max(h, c.offsetHeight);
+      c.style.top = '0'; c.style.bottom = '0';
+    });
+    if (h > 0) ch.style.minHeight = h + 'px';
+  }
+
+  fmtDate() {
+    if (!this._modified) return '';
+    try { return new Intl.DateTimeFormat(this.state.lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(this._modified); } catch (e) { return String(this._modified.getFullYear()); }
   }
 
   ripple(x, y, id) {
@@ -1330,6 +1402,8 @@ class Component extends DCLogic {
     if (this._cio) this._cio.disconnect();
     if (this._safety) clearTimeout(this._safety);
     if (this._onKey) window.removeEventListener('keydown', this._onKey);
+    if (this._onResizeDeb) window.removeEventListener('resize', this._onResizeDeb);
+    if (this._rt) clearTimeout(this._rt);
     document.body.style.overflow = '';
   }
 
@@ -1389,6 +1463,9 @@ class Component extends DCLogic {
       b.style.color = on ? 'var(--ae-ink,#09090d)' : 'var(--ae-t2,rgba(255,255,255,.62))';
     });
     try { localStorage.setItem('aether-lang', lang); } catch (e) {}
+    const upd = root.querySelector('[data-updated]');
+    if (upd) upd.textContent = this.fmtDate();
+    this.fitChapters();
   }
 
   applySkin(id) {
@@ -1396,10 +1473,13 @@ class Component extends DCLogic {
     const root = this.root;
     if (!root) return;
     Object.keys(s.v).forEach(k => root.style.setProperty(k, s.v[k]));
+    Object.keys(s.v).forEach(k => document.documentElement.style.setProperty(k, s.v[k]));
     const light = id === 'paper';
     root.style.setProperty('--ae-navBg', light ? 'rgba(244,242,237,.76)' : 'rgba(9,9,13,.72)');
     document.body.style.background = s.v['--ae-bg'];
     document.documentElement.style.colorScheme = light ? 'light' : 'dark';
+    const tc = document.head.querySelector('meta[name="theme-color"]');
+    if (tc) tc.setAttribute('content', s.v['--ae-bg']);
 
     root.querySelectorAll('[data-skin]').forEach(b => {
       const on = b.getAttribute('data-skin') === id;
